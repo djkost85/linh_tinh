@@ -1,0 +1,12 @@
+body{
+		background: #a7c7dc url(bg.png) repeat-x top left;
+		font-family: verdana;padding:0px;margin:0px;
+		letter-spacing:2px;
+	}
+	.content{margin-top:100px;padding:0px;bottom:0px;}
+	.demo,.demo2{width:580px;padding:10px;	margin:10px auto;
+		border: 1px solid #fff;	background-color:#f7f7f7;
+	}
+	.pagedemo, .demo .demo2{border: 1px solid #CCC;width:560px;margin:2px;
+		padding:50px 10px;text-align:center;background-color:white;	
+	}

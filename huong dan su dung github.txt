@@ -1,0 +1,5 @@
+
+mkdir a folder on local, create a repo on hithub.
+
+cd in folder , git clone git@github.com:zuongthao/linh_tinh.git (get this link from tab ssh )
+
