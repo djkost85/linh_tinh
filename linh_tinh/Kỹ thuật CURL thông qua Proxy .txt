@@ -1,0 +1,77 @@
+Hàm định nghĩa để sử dụng
+
+	 <?php
+//--Code by: Vũ Thanh Lai - Shared at: SinhVienIT.Net
+function getPage($proxy, $url, $referer, $agent, $header, $timeout) {
+    $proxyinfo=explode(':',$proxy);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, $header);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_PROXY, $proxyinfo[0]);
+    curl_setopt($ch, CURLOPT_PROXYPORT, $proxyinfo[1]);
+    curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 0);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    curl_setopt($ch, CURLOPT_REFERER, $referer);
+    curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+ 
+    $result['EXE'] = curl_exec($ch);
+    $result['INF'] = curl_getinfo($ch);
+    $result['ERR'] = curl_error($ch);
+ 
+    curl_close($ch);
+    return $result;
+}?> 
+
+
+Diễn giải các hàm sử dụng
+
+
+    curl_init - Khởi tạo cURL session.
+    curl_setopt - Thiết lập tùy chọn khi CURL.
+    curl_exec - Thực hiện cURL và lấy nội dung trả về.
+    curl_getinfo - Lấy thông tin về quá trình CURL.
+    curl_error - Trả về 1 chuỗi mang nội dung là lỗi của quá trình CURL cuối cùng trong session CURL này.
+    curl_close - Đóng cURL session.
+
+
+Các tùy chọn curl_setopt
+
+    CURLOPT_URL -URL mình muốn CURl tới
+    CURLOPT_HEADER -Có kèm header của http response vào nội dung trả về ko ?
+    CURLOPT_RETURNTRANSFER -Trả kết quả transfer về dạng 1 string
+    CURLOPT_PROXY - HTTP proxy mà mình sẽ sử dụng.
+    CURLOPT_HTTPPROXYTUNNEL -Bật đường ống đi qua Proxy ?
+    CURLOPT_CONNECTTIMEOUT - Thời gian Time out khi kết nối.
+    CURLOPT_REFERER - Muồn giả refer là từ đâu ?.
+    CURLOPT_USERAGENT - Muốn fake userAgent là gì ?.
+
+
+Kết quả trả về
+
+    $result['EXE']: Nội dung trang get đc
+    $result['INF']: Thông tin về quá trình CURL
+    $result['ERR']: Lỗi khi CURL nếu có
+
+
+Cách dùng
+
+ <?php
+$result = getPage(
+    '[proxy IP]:[port]',// Dùng 1 proxy hợp lệ
+    'http://www.google.com/search?q=sinhvienit.net',
+    'http://www.google.com/',
+    'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.8) Gecko/2009032609 Firefox/3.0.8',
+    '',
+    5);
+ 
+if (empty($result['ERR'])) {
+    // Nếu quá trình CURL ko có lỗi nào
+    // Xuất kết quả get đc
+    echo $result['EXE'];
+} else {
+     // Xảy ra lỗi ?
+    // Xuất lỗi
+    echo 'Error: '.$result['ERR'];
+}
+?> 

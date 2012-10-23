@@ -1,0 +1,47 @@
+Random Integer
+
+function get_random_number($min = 0, $max = 100) {
+  return rand($min,$max);
+}
+
+Random String - From Preset Word List (Array)
+
+function get_random_string_from_list($list_of_words) {
+  return $list_of_words[rand(0, sizeof($list_of_words)-1)];
+}
+
+Random String
+
+function get_random_string($length=6,$characters = "ABCDEFGHIJKLMNOPRQSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") {
+        $num_characters = strlen($characters) - 1;
+        while (strlen($return) < $length) {
+            $return.= $characters[mt_rand(0, $num_characters)];
+        }
+        return $return;
+}
+
+Random Float
+
+function random_float ($min, $max) {
+   return ($min + lcg_value() * (abs($max-$min)));
+}
+
+Source: PHP.net
+Random Hex Color
+
+function get_random_hex_color($values = 'abcdef0123456789',$length=6) {
+        $num_characters = strlen($characters) - 1;
+        while (strlen($code) < $length) {
+            $return.= $characters[mt_rand(0, $num_characters)];
+        }
+        return '#'.$return;
+}
+
+Random File From Directory
+
+function get_random_file($dir) {
+        while (false !== ($file = readdir($dir))) {
+                $files[] = $file;
+        }
+        return $files[rand(0, sizeof($files)-1)];
+}
