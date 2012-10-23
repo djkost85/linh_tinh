@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<SCRIPT src="floater_xlib.js" type=text/javascript></SCRIPT>
+
+
+<SCRIPT type=text/javascript>
+
+var slideTime = 700;
+var floatAtBottom = false;
+
+function pepsi_floating_init()
+{
+	xMoveTo('floating_banner_right', 887 - (1024-screen.width), 0);
+
+	winOnResize(); // set initial position
+	xAddEventListener(window, 'resize', winOnResize, false);
+	xAddEventListener(window, 'scroll', winOnScroll, false);
+}
+function winOnResize() {
+	checkScreenWidth();
+	winOnScroll(); // initial slide
+}
+function winOnScroll() {
+  var y = xScrollTop();
+  if (floatAtBottom) {
+    y += xClientHeight() - xHeight('floating_banner_left');
+  }
+  
+  xSlideTo('floating_banner_left', (screen.width - (800-775) - 770)/2-115 , y, slideTime);  // Chỉnh khoảng cách bên trái
+  xSlideTo('floating_banner_right', (screen.width - (800-795) + 770)/2, y, slideTime); // // Chỉnh khoảng cách bên Phải
+}
+	
+function checkScreenWidth()
+{
+	if( document.body.clientWidth < 926 )
+	{	
+		document.getElementById('floating_banner_left').style.display = 'none';
+		document.getElementById('floating_banner_right').style.display = 'none';
+	}
+	else
+	{
+		document.getElementById('floating_banner_left').style.display = '';
+		document.getElementById('floating_banner_right').style.display = '';	
+	}
+}
+
+</SCRIPT>
+
+</head>
+
+<body>
+
+<div id="floating_banner_left" style="text-align:right; position:absolute; overflow:hidden; top: 0px; left: 0px; width: 105px; border: 0px solid #000;">
+<div id="floating_banner_left_content">
+    <a href="#" target="_blank"><img src="lien1.jpg" border="0" width="105px" alt="" /></a><br />
+</div>
+</div>
+
+
+<div id="floating_banner_right" style="text-align:left; position:absolute; overflow:hidden; top: 0px; right: 0px; width: 105px; border: 0px solid #000;">
+	<div id="floating_banner_right_content"  >
+    <a href="#" target="_blank"><img src="lien2.jpg" border="0" width="105px" alt="" /></a><br />
+</div>
+</div>
+
+<script>
+	pepsi_floating_init();
+</script>
+
+
+
+
+
+
+
+<br />
+<br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+</body>
+</html>
