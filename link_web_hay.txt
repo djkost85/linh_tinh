@@ -1,0 +1,7 @@
+http://en.wikipedia.org/wiki/List_of_HTTP_headers
+
+
+http://vshare.biz/vshare/10-dieu-hay-ho-co-the-lam-voi-curl.html
+
+
+http://net.tutsplus.com/tutorials/php/techniques-and-resources-for-mastering-curl/

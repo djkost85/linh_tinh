@@ -1,0 +1,24 @@
+<?php
+$ckfile = "cookie2.txt";
+//file cookie2.txt phai ton tai va:
+//no phai dc tao ra tu 2 function :
+//curl_setopt ($ch, CURLOPT_COOKIEJAR, $cookie);
+//curl_setopt ($ch, CURLOPT_COOKIEFILE, $cookie);
+
+/* STEP 2. visit the homepage to set the cookie properly */
+$ch = curl_init ("http://localhost/cms/wordpress/wp-admin/");
+curl_setopt ($ch, CURLOPT_COOKIE, $ckfile);
+curl_setopt ($ch, CURLOPT_COOKIEFILE, $ckfile);
+curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt ($ch, CURLOPT_REFERER, $url . "wp-admin/");
+$output = curl_exec ($ch);
+curl_close($ch);
+if($output){
+echo $output;
+}
+else{
+    echo "output false<br/>";
+}
+
+
+?>
