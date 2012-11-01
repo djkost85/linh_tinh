@@ -19,7 +19,7 @@ function google_docs(){
             $client = new Zend_Gdata_Docs($gdocs);
             //$feed = $client->getDocumentListFeed();
             //$query = "function";
-			    $docsQuery = new Zend_Gdata_Docs_Query();
+			$docsQuery = new Zend_Gdata_Docs_Query();
     			$docsQuery->setQuery("function");
     			$feed = $client->getDocumentListFeed($docsQuery);
 			try{
