@@ -1,0 +1,388 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Facebook Timeline Design with jquery and CSS</title>
+<head>
+
+
+<style>
+body { background-color: #E7EBF2; font-family:arial; font-size:13px }
+#container, #containertop	{	width:860px; margin: 0 auto; 	}
+
+.borderclass { border:1px solid #A9B6D2; }
+.item {
+  width: 408px;
+  margin: 10px;
+  float: left;
+  margin-top:10px;
+  background-color:#ffffff;
+  border:solid 1px #B4BBCD;
+min-height:50px;
+text-align:justify;
+word-wrap:break-word; 
+}
+.topbox
+{
+margin: 10px;
+
+
+margin-top: 10px;
+background-color: white;
+border: solid 1px #B4BBCD;
+
+}
+
+
+.item div, .topbox div
+{
+padding:8px;	
+}
+.rightCorner { 
+    background-image: url("images/right.png");
+    display: block;
+    height: 15px;
+    margin-left: 408px;
+    margin-top: 8px;
+    padding: 0;
+    vertical-align: top;
+    width: 13px;
+z-index:2;
+
+	position: absolute;
+}
+.leftCorner{
+background-image: url("images/left.png");
+display: block;
+height: 15px;
+width: 13px;
+margin-left: -13px;
+margin-top: 8px;
+position: absolute;
+z-index:2;
+}
+#popup{ display: block; 
+ width: 408px;
+  float: left;
+  margin-top:10px;
+  background-color:#ffffff;
+  border:solid 1px #A9B6D2;
+  min-height:60px;
+  display:none;
+  position:absolute;
+  margin:10px;
+ }
+.Popup_rightCorner
+{
+background-image: url("images/right.png");
+    display: block;
+    height: 15px;
+    margin-left: 408px;
+    margin-top: 8px;
+    padding: 0;
+    vertical-align: top;
+    width: 13px;
+z-index:2;
+
+	position: absolute;
+}
+ #box
+{
+padding:8px;	
+
+}
+#update
+{
+width:100%;
+}
+
+ .timeline_container{
+                width: 16px;
+                text-align: center;
+                margin: 0 auto;
+				cursor:pointer;
+				    display: block;
+            }
+            .timeline{
+                                
+                margin: 0 auto;
+				 background-color:#e08989;
+    display: block;
+    float: left;
+    height: 100%;
+    left: 428px;
+    margin-top: 10px;
+    position: absolute;
+    width: 4px;
+            }
+            .timeline:hover{
+                cursor: pointer;
+				margin: 0 auto;
+            }
+            .timeline div.plus{
+                width: 14px;
+                height: 14px;
+               
+                position: relative;
+                left: -6px;
+            }
+			#update_button {
+background-color: #cc0000;
+color: white;
+font-weight: bold;
+padding: 5px;
+border: solid 1px #333;
+margin-top: 5px;
+cursor: pointer;
+}
+.shade{box-shadow:0px 0px 18px #000;-moz-box-shadow:0px 0px 18px #000;-webkit-box-shadow:0px 0px 18px #000}
+h1{ font-family: 'Georgia',Times New Roman; }
+.timeline:hover
+{
+cursor: none;
+}
+.deletebox
+{
+font-weight:bold;
+float:right;
+text-decoration:none;
+margin:8px 10px 8px 10px;
+color:#cc0000
+}
+</style>
+</head>
+<body>
+ <div id="containertop" >
+ <div id='profile' style='margin:10px;height:100px'>
+ <img src='https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/161762_100000378319955_710020850_n.jpg' style='border:solid 2px #cc0000;float:left;height:100px;' alt='Srinivas Tamada'/>
+ <h1 style='margin-left:120px'>Onizuka Eikichi</h1>
+ <h2 style='margin-left:120px'>Nghệ An</h2>
+ <h4 style='margin-left:120px'>Follow me <a href='http://windowsz.net'>@windowsz.net</a> - Add Me <a href='www.facebook.com/hoangtritlof'>www.facebook.com/hoangtritlof</a> </h4>
+
+ </div>
+
+</div>
+  <div id="container">
+    
+       <div class="timeline_container">
+            <div class="timeline">
+                <div class="plus"></div>
+            </div>
+        </div>
+	 
+	  <div class="item ">
+           <a href='#' class='deletebox'>X</a>
+	  		<div>Chán quá xá đê. Nay ngày gì mà xui thế ko bik. Đau từ sáng tới h :(( </div>
+	  	</div>
+<div class="item ">
+ <a href='#' class='deletebox'>X</a>
+	  	<div>
+	  	  <p>Định nghĩa Bạn thân là gì?</p>
+	  	  <p>B: Bao dung ♥</p>
+	  	  <p>A: An toàn ♥</p>
+	  	  <p>N: Nhường nhịn ♥</p>
+	  	  <p>T: Thươg yêu ♥</p>
+	  	  <p>H: Hiền hòa ♥</p>
+	  	  <p>Â: Ấm áp ♥</p>
+	  	  <p>N: Ngọt ngào ♥</p>
+	  	  <h6 data-ft="{'type':1}">&nbsp;</h6>
+	  	</div>		
+    </div>
+	  <div class="item ">
+ <a href='#' class='deletebox'>X</a>
+	  		<div>
+	  		  <h6 data-ft="{'type':1}">~ Có ai đảm bảo cả đời này chỉ yêu một người và mãi mãi như vậy không ?<br>
+	  		    ~ Có ai dám nói không bao giờ rung động trước cái đẹp và sẽ không thay đổi không ?<br>
+	  		    ~ Ai cũng có phút yếu lòng, rung động vì một ai đó.<br>
+  		      ~ Quan trọng mình có đủ can đảm để nhận ra điểm dừng hay không thôi... :)</h6>
+	  		</div>
+	  </div>
+	  
+	  <div class="item">
+ <a href='#' class='deletebox'>X</a>
+	  		<div>
+	  		  <p>15 năm trước :<br>
+	  		    Họ 15 tuổi, anh bế cô xoay vòng trong lớp học,<br>
+	  		    Cô vui sướng cười khúc khích, anh nói với cô rằng, anh muốn lấy cô làm vợ, cô khóc vì cảm động.</p>
+	  		  <p>13 năm trước :<br>
+	  		    Tuổi trẻ thời trung học, anh tặng cô cành hoa hồng và chocolate,<br>
+	  		    Những quà tặng ấy đã đơn giản chiếm tình cảm của cô trong ngày Valentine,<br>
+	  		    Sau đó họ cùng nhau tản bộ về nhà,<br>
+	  		    Cô hỏi : Có thật cậu sẽ lấy tớ không ?<br>
+	  		    Anh nói : Tất nhiên rồi !<br>
+	  		    Cô lại bật khóc.</p>
+	  		  <p>12 năm trước :<br>
+	  		    Họ 18 tuổi, cô đã cho anh lần đầu tiên của mình,<br>
+	  		    Anh rất cẩn thận đón nhận, dù đã rất cẩn thận,<br>
+	  		    Nhưng vẫn làm đau cô, anh khóc xin lỗi cô,<br>
+	  		    Cô lại cười vì hạnh phúc.</p>
+	  		  <p>10 năm trước :<br>
+	  		    Họ 20 tuổi, cô đã yêu một người đàn ông công sở hơn cô 10 tuổi,<br>
+	  		    Anh vừa mới tốt nghiệp và đang kiếm việc làm.<br>
+	  		    Anh nói : Hiện tại là thời kỳ u tối nhất của đàn ông.<br>
+	  		    Cô nói : uhm… rồi sao hả ?<br>
+	  		    Anh nói : Tớ nhất định sẽ cố gắng kiếm tiền, chúng ta đã hứa lấy nhau mà.<br>
+	  		    Cô nói : Không có tiền còn muốn lấy tớ ưh ?<br>
+	  		    Anh biết mình đã cưng chiều cô hư mất rồi.</p>
+	  		  <p>7 năm trước :<br>
+	  		    Họ 23 tuổi, anh đã đứng dậy vươn mình từ cái xã hội đầy khốc liệt.<br>
+	  		    Sau khi cô kết hôn, phát hiện ngày Valentine của cô đã không còn đóa hoa nào,<br>
+	  		    Cô gọi điện cho anh : Gần đây khỏe không ?<br>
+	  		    - uhm, khỏe, cậu và chồng cậu khỏe chứ ?<br>
+	  		    - uhm, cũng tốt.</p>
+	  		  <p>5 năm trước :<br>
+	  		    Họ 25 tuổi, hôn nhân không hạnh phúc, cô đã ly dị,<br>
+	  		    Trước khi rời khỏi, người đàn ông đó đã buông một câu nói : Cô thật ra chẳng biết làm vợ.</p>
+	  		  <p>Khoảng 5 năm sau đó :<br>
+	  		    Họ 30 tuổi, tình cờ gặp mặt nhau,<br>
+	  		    Cô : Em dần dần cảm thấy mình bắt đầu già đi, anh vẫn còn muốn lấy em chứ ?<br>
+	  		    Anh : Không thể !<br>
+	  		    Cô : Tại sao ? Anh đã từng hứa với em mà.<br>
+	  		    Anh : Vì anh đã có tiền, cho nên anh không thể lấy em !</p>
+	  		  <p>Đàn ông có trách nhiệm đem hạnh phúc cho phụ nữ, dù là vật chất hay về mặt tinh thần.<br>
+	  		    Ngược lại, phụ nữ cũng phải có trách nhiệm, không có người đàn ông nào chịu lấy một người con gái có tính tình buông thả, ngông cuồng.</p>
+	  		  <p>Người đàn ông không cần nhiều thứ.<br>
+	  		    Chỉ hy vọng, sau một ngày làm việc cực khổ về nhà, được ăn bữa cơm nóng do chính vợ nấu, có giọng nói vọng ra từ nhà bếp rằng : “Anh đã mệt một ngày trời rời, cơm canh nóng đang đợi anh nè !”<br>
+	  		    Và hy vọng quần áo do chình vợ một tay giặt, chứ không phải là bảo mẫu.<br>
+	  		    Tất cả mọi việc người phụ nữ làm, người đàn ông cũng sẽ cảm nhận được, người vợ cũng đang nỗ lực vì gia đình của mình.</p>
+	  		  <p>Đối với đàn ông mà nói, nuôi vợ của mình là điều đáng phải làm,<br>
+	  		    Nhưng phụ nữ tuyệt đối cũng đừng vì thế mà nhận định rằng : đàn ông nuôi phụ nữ là điều đáng nên làm !<br>
+	  		    Vợ chồng hòa thuận hạnh phúc là cùng nhau san sẽ mọi thứ, giới trẻ thời nay luôn có ý nghĩ đàn ông bắt buộc phải nuôi vợ, nhưng… đó có phải là tình yêu thật sự hay không ?</p>
+	  		</div>		
+	  	</div>
+	  <div class="item">
+ <a href='#' class='deletebox'>X</a>
+	  		<div>Vợ cầm chổi chỉ vào mặt ông chồng đang nằm trong gầm giường: &quot;Ông có ra đây không hả?&quot;.<br>
+	  		  Ông chồng hét to:<br>
+	  		  - Tôi là chủ gia đình này, nằm đâu là kệ tôi.<br>
+  		    (có ai như ông chồng này k?và có ai như bà vợ này k?like và cho ý kiến nha mọi ng)</div>		
+  	</div>
+	  <div class="item">
+ <a href='#' class='deletebox'>X</a>
+	  		<div>A và B đang trò chuyện :<br>
+	  		  A: &quot;Ê, tao hỏi mày cái này nha?&quot;<br>
+	  		  B: Nói đi.<br>
+	  		  A: Ví dụ nhà mày nuôi 1 con chó và 1 con lợn. Đến đám giỗ, mày cần đưa 1 con lên bàn thờ. Con lợn nó nghĩ mày thịt con chó, con chó nó lại nghĩ mày thịt con lợn. Vậy theo mày, mày sẽ thịt con nào?<br>
+	  		  B: Con lợn !<br>
+  		    A: Mày suy nghĩ giống con chó quá =))</div>		
+	  </div>
+	  
+	 <div id="popup" class='shade'>
+	 		
+		<div class="Popup_rightCorner" >	</div>
+		<div id='box'>
+		<b>Bạn mún ghi gì?</b><br/>
+		<textarea id='update'></textarea>
+		<input type='submit' value=' Đăng lên tường ' id='update_button'/>
+         </div>
+	
+	</div>
+	</div>
+	
+		
+	</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="jquery.masonry.min.js"></script>
+
+<script>
+$(function(){
+
+
+function Arrow_Points()
+{ 
+var s = $('#container').find('.item');
+$.each(s,function(i,obj){
+var posLeft = $(obj).css("left");
+$(obj).addClass('borderclass');
+if(posLeft == "0px")
+{
+html = "<span class='rightCorner'></span>";
+$(obj).prepend(html);			
+}
+else
+{
+html = "<span class='leftCorner'></span>";
+$(obj).prepend(html);
+}
+});
+}
+
+$('.timeline_container').mousemove(function(e)
+{
+var topdiv=$("#containertop").height();
+var pag= e.pageY - topdiv-26;
+$('.plus').css({"top":pag +"px", "background":"url('images/plus.png')","margin-left":"1px"});}).
+mouseout(function()
+{
+$('.plus').css({"background":"url('')"});
+});
+	
+	
+				
+$("#update_button").live('click',function()
+{
+var x=$("#update").val();
+$("#container").prepend('<div class="item"><a href="#" class="deletebox">X</a><div>'+x+'</div></div>');
+
+//Reload masonry
+$('#container').masonry( 'reload' );
+
+$('.rightCorner').hide();
+$('.leftCorner').hide();
+Arrow_Points();
+
+$("#update").val('');
+$("#popup").hide();
+return false;
+});
+
+// Divs
+$('#container').masonry({itemSelector : '.item',});
+Arrow_Points();
+  
+//Mouseup textarea false
+$("#popup").mouseup(function() 
+{
+return false
+});
+  
+$(".timeline_container").click(function(e)
+{
+var topdiv=$("#containertop").height();
+$("#popup").css({'top':(e.pageY-topdiv-33)+'px'});
+$("#popup").fadeIn();
+$("#update").focus();
+
+	
+});  
+
+
+$(".deletebox").live('click',function()
+{
+if(confirm("Are your sure?"))
+{
+$(this).parent().fadeOut('slow');  
+//Remove item
+$('#container').masonry( 'remove', $(this).parent() );
+//Reload masonry
+$('#container').masonry( 'reload' );
+$('.rightCorner').hide();
+$('.leftCorner').hide();
+Arrow_Points();
+}
+return false;
+});
+
+
+
+//Textarea without editing.
+$(document).mouseup(function()
+{
+$('#popup').hide();
+
+});
+ 
+  
+});
+</script>
+
+</body>
+</html>

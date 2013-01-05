@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from www.melonhtml5.com/ by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 07:11:26 GMT -->
+<head>
+        <title>MelonHTML5 - Metro Framework</title>
+        <link rel="stylesheet" type="text/css" href="script/index8c6d.html?c=tooltip/tooltip,gallery/cube_gallery,emu_slider/emu_slider,css/metro,css/website&amp;k=834480" />
+        <script type="text/javascript" src="script/index4db3.html?s=javascript/jquery,javascript/jquery_ui,javascript/util,javascript/metro&amp;k=215973"></script>
+        <script type="text/javascript"> 
+            <!-- Google Analytics -->
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-30465336-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+            var DEBUG = false;
+        </script>
+    </head>
+    <body>
+        <header>
+            <div id="theme_picker">
+                <span>Theme:</span>
+                <div class="selected">
+                    <div class="square default"></div>
+                    <label class="text_shadow">custom</label>
+                </div>
+                <div>
+                    <div class="square blue"></div>
+                    <label class="text_shadow">blue</label>
+                </div>
+                <div>
+                    <div class="square orange"></div>
+                    <label class="text_shadow">orange</label>
+                </div>
+                <div>
+                    <div class="square red"></div>
+                    <label class="text_shadow">red</label>
+                </div>
+                <div>
+                    <div class="square green"></div>
+                    <label class="text_shadow">green</label>
+                </div>
+                <div>
+                    <div class="square darkgreen"></div>
+                    <label class="text_shadow">darkgreen</label>
+                </div>
+                <div>
+                    <div class="square purple"></div>
+                    <label class="text_shadow">purple</label>
+                </div>
+                <div>
+                    <div class="square darkred"></div>
+                    <label class="text_shadow">darkred</label>
+                </div>
+                <div>
+                    <div class="square darkblue"></div>
+                    <label class="text_shadow">darkblue</label>
+                </div>
+                <div>
+                    <div class="square yellow"></div>
+                    <label class="text_shadow">yellow</label>
+                </div>
+                <div>
+                    <div class="square grey"></div>
+                    <label class="text_shadow">grey</label>
+                </div>
+            </div>
+            <div id="wallpaper_picker">
+                <span>Wallpaper:</span>
+                <div>
+                    <div class="square w1" data-image="../images/wallpaper/1.jpg"></div>
+                    <label class="text_shadow">wallpaper 1</label>
+                </div>
+                <div class="selected">
+                    <div class="square w2" data-image="../images/wallpaper/2.jpg"></div>
+                    <label class="text_shadow">wallpaper 2</label>
+                </div>
+                <div>
+                    <div class="square w3" data-image="../images/wallpaper/3.jpg"></div>
+                    <label class="text_shadow">wallpaper 3</label>
+                </div>
+            </div>
+        </header>
+        <div id="start"></div>
+        <div id="settings"></div>
+        <div id="widget_scroll_container">
+            <div class="widget_container full " data-num="0">
+                <div class="widget widget4x2 widget_red animation unloaded" data-url="" data-theme="red" data-name="#MelonHTML5">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/melonhtml5.png');">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget4x2 widget_orange animation unloaded" data-url="blank.php" data-theme="orange" data-name="#scroll.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_scroll.png');">
+                            <span>scroll.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_darkblue animation unloaded" data-url="contact.php" data-theme="darkblue" data-name="#Contact">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_notification.png');">
+                            <span>Contact</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_blue widget_link animation unloaded" data-url="" data-theme="blue" data-name="#Blog" data-link="http://lee-le.com/#!blog-2012-11-19">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_blog.png');">
+                            <span>Blog</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget4x2 widget_darkgreen animation unloaded" data-url="cube.php" data-theme="darkgreen" data-name="#gallery.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_gallery.png');">
+                            <span>3D gallery.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_purple animation unloaded" data-url="blank.php" data-theme="purple" data-name="#editable.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_editable.png');">
+                            <span>editable.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_green animation unloaded" data-url="metro_gallery.php" data-theme="green" data-name="#metro_gallery.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_metro_gallery.png');">
+                            <span>metro gallery.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_blue animation unloaded" data-url="blank.php" data-theme="blue" data-name="#map.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_map.png');">
+                            <span>map.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_darkblue animation unloaded" data-url="blank.php" data-theme="darkblue" data-name="#file.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_file.png');">
+                            <span>file.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_blue animation unloaded" data-url="emu_slider.php" data-theme="blue" data-name="#emu_slider.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_slider.png');">
+                            <span>emu_slider.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_darkblue animation unloaded" data-url="blank.php" data-theme="darkblue" data-name="#htmlchart.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_chart.png');">
+                            <span>htmlchart.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget4x2 widget_red animation unloaded" data-url="tab.php" data-theme="red" data-name="#tab.js">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_tab.png');">
+                            <span>tab.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_darkred widget_link animation unloaded" data-url="" data-theme="darkred" data-name="#About" data-link="http://www.lee-le.com/#!about">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/widget_aboutme.png');">
+                            <span>About Me</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget1x1 widget_ widget_link animation unloaded" style="background-color:#3B5B99;" data-url="" data-theme="" data-name="#Facebook" data-link="http://facebook.com/MelonHTML5">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/social/facebook.png');">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget1x1 widget_ widget_link animation unloaded" style="background-color:#00ACED;" data-url="" data-theme="" data-name="#Twitter" data-link="http://twitter.com/MelonHTML5">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/social/twitter_w.png');">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget1x1 widget_ widget_link animation unloaded" style="background-color:#232323;" data-url="" data-theme="" data-name="#CodeCanyon" data-link="http://codecanyon.net/user/leli2000">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/social/codecanyon2.png');">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget1x1 widget_yellow animation unloaded" data-url="" data-theme="yellow" data-name="#Share">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span><div class="fb-like" data-href="http://www.melonhtml5.com" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false"></div>
+                              <div id="fb-root"></div>
+                              <div style="margin-top:10px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.melonhtml5.com" data-hashtags="MelonHTML5"></a></div></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget_container half " data-num="1">
+                <div class="widget widget4x2 widget_grey animation unloaded" data-url="iframe.php?src=http://www.cuttherope.ie/" data-theme="grey" data-name="#Cut_the_Rope">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/cut_the_rope.png');background-size:cover;">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey widget_link animation unloaded" data-url="" data-theme="grey" data-name="#Angry_Birds" data-link="http://chrome.angrybirds.com/">
+                    <div class="widget_content">
+                        <div class="main" style="background-image:url('images/angry_birds.png');background-size:cover;">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00033">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00034">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00035">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget_container half " data-num="2">
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00023">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00023">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00024">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00025">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00026">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget2x2 widget_grey animation unloaded" data-url="blank.php" data-theme="grey" data-name="#widget_00027">
+                    <div class="widget_content">
+                        <div class="main" style="">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "../connect.facebook.net/en_US/all.js#xfbml=1&appId=161905873924694";fjs.parentNode.insertBefore(js, fjs);}(document, "script", "facebook-jssdk"));</script>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="../platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div id="widget_preview">
+            <div id="widget_sidebar">
+                <div class="cancel"></div>
+                <div class="refresh"></div>
+                <div class="download"></div>
+                <div class="back"></div>
+                <div class="next"></div>
+            </div>
+        </div>
+    </body>
+
+<!-- Mirrored from www.melonhtml5.com/ by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 07:11:35 GMT -->
+</html>

@@ -1,0 +1,299 @@
+*{
+	margin:auto;
+	padding:0;}
+body{background: #E9E9E9 url(images/bg.gif);
+	 color:#555;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;}	
+	
+A { color:#555; text-decoration: none; font-family: Arial; font-size:12px;}
+A:hover { COLOR:#06C; text-decoration: none; }	
+a:hover, a:visited{outline:none}
+Select { cursor:default; margin-right:2px; color: #4B4B4C; }
+Textarea { overflow:auto; }
+form { margin: 0; padding:0}
+optgroup{ font-size: 10px; }
+/*---------------------------------------------------------------*/
+Table,Tr,Td {
+	Font-size: 13px; 
+	Font-family: Arial;
+	/*border-collapse: collapse;*/  }
+.topborder { border: #FFF 5px solid; background-color: #FFF }
+.border { border: #E9E9E9 1px solid; }
+p { margin:5px; padding: 5px }
+.fr_top{
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	background-color:#3392cd;
+	color:#FFF;
+	padding:3px;
+	height:23px;
+	font-weight:bold;
+	text-align:center}
+.fr_top a{
+	color:#FFF;}	
+.fr_top a:hover{
+	color:#CCC}	
+.fr{
+	background-color:#FFFFFF;
+	border:1px solid #E9E9E9;
+	padding:3px;
+	font-weight:bold; 
+	text-align: center;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+.fr_2{
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+	background-color:#FBFBFB;
+	border:1px solid #E9E9E9;
+	padding:3px; 
+background-color: #F8F8F8;
+/*border-radius: 20px;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;*/
+background: #FAFAFA url(http://forum.iloveducpho1.com/images/backgroundpostbit.png);
+/*box-shadow: 0px 0px 26px black;
+-webkit-box-shadow: 0px 0px 26px black;
+-moz-box-shadow: 0px 0px 26px black;*/
+background-image: -webkit-linear-gradient(top,white,#E0DCDC);
+background-image: -moz-linear-gradient(top,white,#E0DCDC);
+background-image: -khtml-linear-gradient(top,white,#E0DCDC);
+}
+
+Input,Textarea,Button,Select{
+	Font-family: Verdana;
+	Font-size: 11px;
+	border: 1px solid #E5E5E5;
+	vertical-align:middle;
+	padding-left:3px;
+	margin:0;
+	background: #FFF;
+	color: #4f4f4f;
+}
+	
+#content{
+	width:1000px;
+	height:auto;
+	border:outset 1px #CCC;}	
+#navar{
+	display:block;
+	padding-top:2px;
+	height:20px;
+	background-color:#0f7dc2;
+	font-size:12px;
+	color:#fff;
+	text-align:center;
+	font-weight:bold}	
+.navar_title{
+	float:left;
+	padding-left:10px;
+	color:#FFF}		
+.navar_link{
+	float:right;
+	padding-right:15px;
+	color:#FFF}	
+.navar_link a{
+	text-decoration:none;
+	color:#fff;}		
+.navar_link a:hover{
+	text-decoration:none;
+	color:#CCC;}			
+
+#menu{
+
+	float:left;
+	width:180px;}	
+.title_box{
+	display:block;
+	padding-top:2px;
+	height:20px;
+	background-color:#0f7dc2;
+	color:#fff;
+	text-align:center;
+	font-weight:bold}	
+	
+.adminkute{
+	display:block;
+	padding-top:2px;
+	height:20px;
+	background-color:#FF4A4F;
+	color:#fff;
+	text-align:center;
+	font-weight:bold}		 
+	
+.noidung{
+	margin-bottom:10px;
+	border:1px solid #E9E9E9;
+	padding-left:7px;
+	line-height:18px;}	
+#main{
+	margin-top:10px;
+	float:right;
+	width:810px;
+	margin-left:10px;
+	border:outset 1px;}
+	
+	
+.navigation {
+	text-align:center;
+    font-family:Arial;
+    font-size:12px;
+    clear: both;
+    padding: 7px 0px;;
+    font-weight:bold;
+	text-decoration:none;
+    color:#555;
+}
+.navigation .current_page_item, .navigation .page_item a {
+    outline:none;
+    margin:2px;
+    padding:1px 4px;
+    border: 1px solid #E9E9E9;
+    text-decoration:none;
+}
+
+.navigation .page_item a {
+    border: 1px solid #E9E9E9;
+	text-decoration:none;
+    color:#555;
+}
+
+.navigation .current_page_item, .navigation .page_item a:hover {
+    color: #555;
+    background-color:#E9E9E9;
+	text-decoration:none;
+}	
+	 	
+.time{
+	color:#666;
+	font-family:Tahoma, Geneva, sans-serif}		
+.user{
+	color:#936;
+	font-weight:bold;}
+.admin{
+	color:#F00;
+	font-weight:bold;}	
+.pagetext{
+	color:#333}	
+.button {
+padding:1px;
+border: 1px solid #3079ED !important;
+color: white;
+text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+text-transform: uppercase;
+background-color: #4D90FE;
+background-image: -webkit-gradient(linear,left top,left bottom,from(#4D90FE),to(#4787ED));
+background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+background-image: -moz-linear-gradient(top,#4D90FE,#4787ED);
+background-image: -ms-linear-gradient(top,#4D90FE,#4787ED);
+background-image: -o-linear-gradient(top,#4D90FE,#4787ED);
+background-image: linear-gradient(top,#4D90FE,#4787ED);
+-moz-box-shadow: 0 2px 6px #b3b3b3;
+-webkit-box-shadow: 0 2px 6px #B3B3B3;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+}
+
+.button:hover {
+	background: #efefef url(http://forum.iloveducpho1.com/images/gradients/generic_button.png) repeat-x  ;
+	color: #424242;
+        cursor: pointer;
+}	 
+.user {
+background-image: -webkit-linear-gradient(top,#6CE73B,white,#6CE73B);
+background-image: -moz-linear-gradient(top,#6CE73B,white,#6CE73B);
+background-image: -o-linear-gradient(top,#6CE73B,white,#6CE73B);
+background-image: -ms-linear-gradient(top,#6CE73B,white,#6CE73B);
+border-radius: 4px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+padding: 0px 4px;
+color: red !important;
+border: 1px solid white;
+padding:5px;
+}	 
+/*.time {
+background-image: -webkit-linear-gradient(top,white,#D7E2F3);
+background-image: -moz-linear-gradient(top,white,#D7E2F3);
+background-image: -o-linear-gradient(top,white,#D7E2F3);
+background-image: -ms-linear-gradient(top,white,#D7E2F3);
+border-radius: 4px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+padding: 0px 4px;
+border: 1px solid white;
+height:31px !important;
+}*/
+#congcu_adminkute {
+    z-index: 99;
+    width:26px;
+    position:fixed;
+    right:1px;
+    top:250px;
+    background: transparent;
+    border-radius: 15px;
+	-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+background-image: -webkit-linear-gradient(right,#F508C5,#E2C7E2);
+background-image: -moz-linear-gradient(right,#F508C5,#E2C7E2);
+}
+#congcu_adminkute a:hover {
+    opacity:1
+}
+.footer_adminkute{
+border-radius: 50px;
+border: 1px solid #00748F;
+height: 42px;
+font: bold 13px Arial, Helvetica;
+color: #fff !important;
+padding: 5px;
+text-transform: uppercase;
+background-color: #0483A0;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#31B2C3), to(#0483A0));
+background-image: -webkit-linear-gradient(top, #31B2C3, #0483A0);
+background-image: -moz-linear-gradient(top, #31B2C3, #0483A0);
+background-image: -ms-linear-gradient(top, #31B2C3, #0483A0);
+background-image: -o-linear-gradient(top, #31B2C3, #0483A0);
+background-image: linear-gradient(top, #31B2C3, #0483A0);
+border-radius: 50px;
+text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #fff;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 white;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 white;
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+}
+.thongtin_adminkute{
+text-shadow: 1px 1px 2px #000;
+font-weight: bold;
+padding: 0 8px 2px;
+border: 3px solid #F1EEEE;
+color:#fff !important;
+border-bottom-left-radius: 15px;
+-webkit-border-bottom-left-radius: 15px;
+-moz-border-radius-bottomleft: 15px;
+-khtml-border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+-webkit-border-bottom-right-radius: 15px;
+-moz-border-radius-bottomright: 15px;
+-khtml-border-bottom-right-radius: 15px;
+line-height: 40px;
+height: 24px;
+background-image: -webkit-linear-gradient(top,#FCFBF7,#A09D9D,#FAF7FA);
+background-image: -moz-linear-gradient(top,#FCFBF7,#A09D9D,#FAF7FA);
+background-image: -o-linear-gradient(top,#FCFBF7,#A09D9D,#FAF7FA);
+background-image: -khtml-linear-gradient(top,#FCFBF7,#A09D9D,#FAF7FA);
+}
+.thongtin_adminkute:hover{
+background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+background-image: -moz-linear-gradient(top,#4D90FE,#4787ED);
+background-image: -ms-linear-gradient(top,#4D90FE,#4787ED);
+background-image: -o-linear-gradient(top,#4D90FE,#4787ED);
+background-image: linear-gradient(top,#4D90FE,#4787ED);
+}
+.usertalk{
+color: blue;
+font-weight: bold;}

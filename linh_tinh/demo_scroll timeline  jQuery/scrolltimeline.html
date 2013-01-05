@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="author" content="missNgan" />
+<title>Demo scroll Timeline by JimmyLin  - http://ngankute.info </title>
+<script src="jquery.min.js"></script>
+<style>
+*{margin: 0;padding: 0;}
+body{
+    background: #E7EBF2;
+}
+div{
+    margin: 10px auto;
+    width: 700px;
+    height: 500px;
+    border: 1px solid #000;
+    color: red;
+    text-align: center;
+    font-size: 40px;
+    background: #ccc;
+}
+#timeline{
+    position: fixed;
+    top:20px;
+    right: 30px;
+    list-style: none;
+}
+#timeline li{
+    border-left: 5px solid #94A0C1;
+    text-indent: 7px;
+    color: #94A0C1;
+    cursor: pointer;
+    font-size: 12px;
+    margin-bottom: 1px;
+    padding: 2px 0;
+}
+#timeline li:first-child{
+    font-weight: bold;
+    color: #627AAD;
+    border-color:#627AAD!important;
+}
+#timeline li:hover{
+    text-decoration: underline;
+    border-color: #a7b4d1;
+}
+</style>
+<script>
+$(function(){
+    $('li').each(function(){
+        var $id=$(this).attr('id')
+        var $scroll=$('#'+$id+'_line').offset().top
+        $(this).click(function(){
+            $('html,body').stop().animate({scrollTop:$scroll},800)
+        })
+    })
+})
+</script>
+</head>
+
+<body>
+<ul id="timeline">
+    <li id="time1">Vị trí 1</li>
+    <li id="time2">Vị trí 2</li>
+    <li id="time3">Vị trí 3</li>
+    <li id="time4">Vị trí 4</li>
+    <li id="time5">Vị trí 5</li>
+</ul>
+<div id="time1_line">vị trí 1</div>
+<div id="time2_line">vị trí 2</div>
+<div id="time3_line">vị trí 3</div>
+<div id="time4_line">vị trí 4</div>
+<div id="time5_line">vị trí 5</div>
+</body>
+</html>
