@@ -1,0 +1,323 @@
+﻿<html>
+<head>
+<title>Bài Tập Javascript</title>
+<style>
+body{
+	background-color: #222222;
+	margin: 0px;
+}
+#slideshow{
+	margin: auto;
+	width: 1000px;
+	height: 640px;
+	<!--border: thin solid red;-->
+}
+#showimage{
+	height: 260px;
+	position: relative;
+	top: 20%;
+	<!--border: thin solid red;-->
+}
+#control{
+	position: relative;
+	top: 25%;
+	text-align: center;
+	<!--border: thin solid red;-->
+}
+#buttonpreviousimage{
+	width: 80px;
+	margin-right: 80px;
+}
+#buttonnextimage{
+	width: 80px;
+	margin-left: 80px;
+}
+</style>
+<script language="javascript">
+
+var arrUrl = new Array();
+arrUrl[0] = "Images/1.jpg";
+arrUrl[1] = "Images/2.jpg";
+arrUrl[2] = "Images/3.jpg";
+arrUrl[3] = "Images/4.jpg";
+arrUrl[4] = "Images/5.jpg";
+arrUrl[5] = "Images/6.jpg";
+arrUrl[6] = "Images/7.jpg";
+arrUrl[7] = "Images/8.jpg";
+
+var arrImage = new Array();
+var arrIndex = 0;
+
+var showimageobject; // lưu đối tượng div chứa các ảnh hiển thị.
+var distance; // chiều ngang 1 phần 8 của thẻ div chứa các ảnh hiển thị.
+var run = false; // làm cờ để nhận biết hiệu ứng xoay hình đang chạy nên ko được nhấn nút chuyển hình nữa tới khi hiệu ứng chạy xong.
+var milisecond = 3000; // thời gian quy định thực hiện hiệu ứng chuyển hình
+
+window.onload = function(){
+	
+	showimageobject = document.getElementById("showimage");
+	distance = showimageobject.clientWidth / 8;
+	
+	addImageArray();
+}
+
+// Tạo các đối tượng Image và gán vào mảng.
+function addImageArray(){
+
+	for (var i = 0; i < arrUrl.length; i++){
+		
+		arrImage[i] = new ImageObject(i, arrUrl[i], showimageobject);
+		
+		var obj = arrImage[i];
+		
+		var height = 0;
+		
+		var x = obj.parentwidth / 2;
+		var y = obj.parentheight / 2;
+		
+		if (i > 0){
+			height = obj.parentheight - distance * 3 / 2.5;
+			x = distance * 7;
+		}
+		
+		obj.changeSize(height);
+		
+		obj.setPosition(x, y);
+	}
+	
+	// Thu nhỏ từ các hình thứ 3 trở đi để ko nhìn thấy chúng.
+	if (arrImage.length > 2){
+		for (var i = 2; arrImage.length; i++){
+			arrImage[i].changeSize(1);
+			arrImage[i].setPosition(arrImage[i].x, arrImage[i].y);
+		}
+	}
+}
+
+// Phương thức tạo đối tượng Image. Tham số là index sẽ thêm vào mảng, url là đường dẫn của hình, parent là khung (div) chứa thẻ img sẽ tạo.
+function ImageObject(index, url, parent){
+	this.objecthtml = document.createElement("img"); // Lưu đối tượng hình ảnh của thẻ <img />
+	this.objecthtml.src = url;
+	
+	eval(parent).appendChild(this.objecthtml); // bắt đầu add thẻ img được tạo ở trên vào thẻ div
+	
+	this.index = index; // dùng để lưu chỉ số index.
+	this.objecthtml.id = "image" + this.index; // Chưa sử dụng.
+	
+	// sự kiện khi trỏ chuột vào hình
+	this.objecthtml.onmouseover = function(){
+		// Tìm và lưu đối tượng hình đang trỏ chuột
+		var obj = null; 
+		for (var i = 0; i < arrImage.length; i++){
+			if (arrImage[i].objecthtml.src == this.src){
+				obj = arrImage[i];
+				break;
+			}
+		}
+		// Nếu là hình đang nằm giữa (cũng là khi hiệu ứng chuyển hình đã ngừng)
+		if (obj.x == distance * 4){
+			intervalmain = clearInterval(intervalmain); // ngừng hiệu ứng chuyển hình
+		}
+	}
+	
+	// sự kiện khi đưa trỏ chuột ra khỏi hình
+	this.objecthtml.onmouseout = function(){
+		// Tìm và lưu đối tượng hình đã trỏ chuột
+		var obj = null;
+		for (var i = 0; i < arrImage.length; i++){
+			if (arrImage[i].objecthtml.src == this.src){
+				obj = arrImage[i];
+				break;
+			}
+		}
+		// Nếu là hình đang nằm giữa (cũng là khi hiệu ứng chuyển hình đã ngừng)
+		if (obj.x == distance * 4){
+			intervalmain = setInterval("intervalMoveImage(true)", milisecond); // khởi động lại hiệu ứng tự chuyển hình
+		}
+	}
+	
+	this.parentwidth = eval(parent).clientWidth; // Lưu chiều rộng của khung show hình ảnh
+	this.parentheight = eval(parent).clientHeight; // Lưu chiều cao của khung show hình ảnh
+	
+	this.sourcewidth = this.objecthtml.width; // Lưu chiều rộng thật của file hình
+	this.sourceheight = this.objecthtml.height; // Lưu chiều cao thật của file hình
+	this.rate = (this.objecthtml.width / this.objecthtml.height).toFixed(3); // Tỷ lệ của chiều rộng / cao.
+	
+	this.objecthtml.width = 0; // Dòng này phải đặt sau 3 dòng lệnh gán: this.sourcewidth, this.sourceheight, this.rate
+	this.objecthtml.height = 0; // Dòng này phải đặt sau 3 dòng lệnh gán: this.sourcewidth, this.sourceheight, this.rate
+	this.objecthtml.style.position = "absolute";
+	this.objecthtml.style.zIndex = 1;
+	
+	// x và y dùng để lưu tâm điểm của ảnh, cũng dùng tâm điểm này để di chuyển hình (sẽ chính xác hơn và khỏe hơn khi dùng left và top)
+	this.x;
+	this.y;
+	
+	// Phương thức thay đổi chiều rộng và cao của ảnh
+	this.changeSize = function(height){
+		
+		if (height == 0) // nếu tham số height = 0 thì chiều cao của ảnh sẽ bằng chiều cao của thẻ div chứa nó (dùng cho hình ở giữa)
+			height = this.parentheight;
+			
+		this.objecthtml.width =  height * this.rate;
+		this.objecthtml.height = height;
+	}
+	
+	// Phương thức dùng để di chuyển ảnh sang 1 vị trí khác
+	this.setPosition = function(x, y){
+		this.x = x;
+		this.y = y;
+		this.objecthtml.style.left = x - this.objecthtml.width / 2;
+		this.objecthtml.style.top = y - this.objecthtml.height / 2;
+	}
+	
+	this.moveLeft = function(){
+		if (this.index == arrIndex){ // Khi hình nằm ở giữa di chuyển qua trái
+		
+			if (this.x > distance){ // chỉ cho hình di chuyển đến điểm cần đến
+				this.x -= 2.5;
+			}
+			
+			this.changeSize(this.objecthtml.height - 1);
+			
+			this.setPosition(this.x, this.y);
+			
+			// Nếu hình bên trái (đứng trước hình hiện tại) tồn tại và chưa thu nhỏ hẳn (để không thấy được) thì sẽ thu nhỏ lại.
+			if (arrImage[this.index - 1] != null && arrImage[this.index - 1].objecthtml.height > 1){
+			
+				var i = this.index - 1;
+				// cho ảnh thu nhỏ dần.
+				arrImage[i].changeSize(arrImage[i].objecthtml.height - 1);
+				arrImage[i].setPosition(arrImage[i].x, arrImage[i].y);
+			}
+		}
+		else if (this.index > arrIndex){ // Khi hình nằm bên phải di chuyển qua giữa
+			
+			// Nếu hình bên phải (là hình đã thu nhỏ, đứng sau hình hiện tại, vì hình hiện tại đã nằm bên phải rồi) tồn tại và đang đứng ở vị trí ban đầu (kiểm tra dùng để gán chỉ 1 lần)
+			if (arrImage[this.index + 1] != null && this.x == distance * 7)
+				arrImage[this.index + 1].objecthtml.style.zIndex = 0; // gán z-index cho nó = 0 để nó ko thể hiện đè lên hình trước nó.
+		
+			this.changeSize(this.objecthtml.height + 1);
+			
+			this.setPosition(this.x - 2.5, this.y);
+			
+			// nếu hình hiện tại (bên phải) đã di chuyển tới giữa xong rồi.
+			if (this.x <= distance * 4){
+				if (arrImage[this.index + 1] != null) // kiểm tra nếu còn tại hình khác nằm  bên phải thì set lại z-index cho nó bằng 1 như cũ, vì trước đó đã cho nó bằng 0
+					arrImage[this.index + 1].objecthtml.style.zIndex = 1;
+				
+				interval = clearInterval(interval); // ngừng di chuyển các vị trí của các ảnh nữa
+				arrIndex = this.index; // gán index của ảnh vào biến index của arrIndex
+				
+				run = false; // đã thực hiện chuyển hình xong
+				intervalmain = setInterval("intervalMoveImage(true)", milisecond); // khởi động lại hiệu ứng chuyển hình chính
+			}
+			
+			// Kiểm tra nếu hình bên phải tiếp theo đang được thu nhỏ (không thấy) có tồn tại hay ko và kích cỡ của nó có còn nhỏ hơn cỡ quy định cho hình bên phải ko.
+			if (arrImage[this.index + 1] != null && arrImage[this.index + 1].objecthtml.height < arrImage[this.index + 1].parentheight - distance * 3 / 2.5){
+			
+				var i = this.index + 1;
+				// cho ảnh thu nhỏ (đang ẩn) to dần.
+				arrImage[i].changeSize(arrImage[i].objecthtml.height + 1);
+				arrImage[i].setPosition(arrImage[i].x, arrImage[i].y);
+			}
+		}
+	}
+	
+	this.moveRight = function(){
+		if (this.index == arrIndex){ // Khi hình nằm ở giữa di chuyển qua phải
+			
+			// Nếu hình bên phải tồn tại và đang đứng ở vị trí ban đầu (kiểm tra dùng để gán chỉ 1 lần)
+			if (arrImage[this.index + 1] != null && arrImage[this.index + 1].x == distance * 7)
+				arrImage[this.index + 1].objecthtml.style.zIndex = 0; // gán z-index cho nó = 0 để nó ko thể hiện đè lên hình hiện tại đang di chuyển sang phải thay thế vị trí của nó.
+		
+			if (this.x < distance * 7){ // chỉ cho hình di chuyển đến điểm cần đến
+				this.x += 2.5;
+			}
+			
+			this.changeSize(this.objecthtml.height - 1);
+			
+			this.setPosition(this.x, this.y);
+			
+			// Kiểm tra nếu hình bên phải có tồn tại hay ko và kích cỡ của nó chưa thu nhỏ đến mức quy định chưa (để ko thấy).
+			if (arrImage[this.index + 1] != null && arrImage[this.index + 1].objecthtml.height > 1){
+			
+				var i = this.index + 1;
+				// cho ảnh thu nhỏ dần.
+				arrImage[i].changeSize(arrImage[i].objecthtml.height - 1);
+				arrImage[i].setPosition(arrImage[i].x, arrImage[i].y);
+			}
+		}
+		else if (this.index < arrIndex){ // Khi hình nằm bên trái di chuyển qua giữa
+			
+			this.changeSize(this.objecthtml.height + 1);
+			
+			this.setPosition(this.x + 2.5, this.y);
+			
+			// nếu hình hiện tại (bên trái) đã di chuyển tới giữa xong rồi.
+			if (this.x >= distance * 4){
+				interval = clearInterval(interval); // ngừng di chuyển các vị trí của các ảnh nữa
+				arrIndex = this.index;
+				
+				run = false; // đã thực hiện chuyển hình xong
+				intervalmain = setInterval("intervalMoveImage(true)", milisecond); // khởi động lại hiệu ứng chuyển hình chính
+			}
+			
+			// Kiểm tra nếu hình bên trái tiếp theo đang được thu nhỏ (không thấy) có tồn tại hay ko và kích cỡ của nó có còn nhỏ hơn cỡ quy định cho hình bên trái ko.
+			if (arrImage[this.index - 1] != null && arrImage[this.index - 1].objecthtml.height < arrImage[this.index - 1].parentheight - distance * 3 / 2.5){
+			
+				var i = this.index - 1;
+				// cho ảnh thu nhỏ (đang ẩn) to dần.
+				arrImage[i].changeSize(arrImage[i].objecthtml.height + 1);
+				arrImage[i].setPosition(arrImage[i].x, arrImage[i].y);
+			}
+		}
+	}
+}
+
+var intervalmain = setInterval("intervalMoveImage(true)", milisecond);
+var interval;
+
+function intervalMoveImage(next){
+	
+	// Nếu hiệu ứng di chuyển các vị trí của các ảnh chưa chạy hoặc đã ngừng và nếu có hình tiếp theo nằm bên trái hoặc bên phải mới được chạy (di chuyển tiếp)
+	if (((arrImage[arrIndex + 1] != null && next) || (arrImage[arrIndex - 1] != null && !next)) && !run){
+		run = true; // báo hiệu hiệu ứng chuyển hình đang chạy
+		
+		intervalmain = clearInterval(intervalmain); // tạm ngừng hiệu ứng tự chuyển hình
+		interval = setInterval("moveImagePosition(" + next.toString() + ")", 1);
+	}
+}
+
+function moveImagePosition(next){
+	if (next){ // Nếu di chuyển tới
+		arrImage[arrIndex].moveLeft();
+		arrImage[arrIndex + 1].moveLeft();
+	}
+	else{ // di chuyển lùi
+		arrImage[arrIndex].moveRight();
+		arrImage[arrIndex - 1].moveRight();
+	}
+}
+
+function nextimage_Click(){
+	intervalMoveImage(true);
+}
+
+function previousimage_Click(){
+	intervalMoveImage(false);
+}
+
+// Làm thêm hiệu ứng khi hình chưa di chuyển xong mà nhấn chuyển hình liên tục thì sẽ tiếp tục chuyển hình theo bao nhiêu lần nhấn chuyển hình.
+</script>
+</head>
+<body>
+<div id="slideshow">
+	<div id="showimage">
+	</div>
+	<div id="control">
+		<img id="buttonpreviousimage" onClick="previousimage_Click();" src="Images/previous.png" title="Previous" />
+		<img id="buttonnextimage" onClick="nextimage_Click();" src="Images/next.png" title="Next" />
+	</div>
+</div>
+</body>
+</html>
