@@ -1,0 +1,102 @@
+body{
+    background: none repeat scroll 0 0 #222222;
+    font-family: "Varela Round","helvetica neue",arial,helvetica,freesans,"liberation sans","numbus sans l",sans-serif;
+	color: #fff;
+	font-size: 12px;
+}
+#header{
+    box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.3) inset;
+    -moz-box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.3) inset;
+    -webkit-box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.3) inset;
+	height: 200px;
+    line-height: 200px;
+}
+#header h2{
+	font-family: 'Norican', cursive;
+	color: #fff;
+	font-size: 65px;
+	text-align: center;
+}
+#body{
+    background-color: #FCFCFC;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.3), 0 1px 5px 1px rgba(0, 0, 0, 0.2) inset;
+	-webkit-box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.3), 0 1px 5px 1px rgba(0, 0, 0, 0.2) inset;
+	-moz-box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.3), 0 1px 5px 1px rgba(0, 0, 0, 0.2) inset;
+	color: #3C3C3C;
+	margin-top: -80px;
+	overflow: visible !important;
+	position: relative;
+	z-index: 10;
+    width: 960px;
+	margin: auto;
+	padding: 50px;
+}
+#image{
+	float: left;
+	width: 45%;
+}
+#form{
+    float: right;
+	width: 43%;
+}
+.clear{
+	clear: both;
+}
+#top{
+    background-color: #F38261;
+	min-height: 37px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	left: 0;
+}
+#top ul li{
+	float: left;
+	list-style: none outside none;
+	margin-right: 15px;
+}
+#top ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+#form label{
+    color: #565656;
+	display: block;
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 26px;
+	width: 200px;
+}
+#form input[type="submit"]{
+    background-color: #F58462;
+	border: medium none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #FFFFFF;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+    margin-top: 24px;	
+	padding: 0 10px;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	width: 130px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #AE6257;
+	border-top: 1px solid #D9C4BF;
+}
+#image h1{
+	color: #888;
+	text-align: center;
+	font-size: 40px;
+}
+.center{
+	text-align: center;
+}
+.center p{
+	color: #888;
+	font-size: 20px;
+	margin-bottom: 20px;
+}

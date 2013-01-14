@@ -1,0 +1,31 @@
+a {
+	color:#FF4286;
+	text-decoration:none;
+	outline:none;
+	cursor:pointer;
+}
+a:hover {
+	color:deepskyblue;
+}
+img {
+	border:none;
+}
+a.emo img {
+	margin:2px;
+	padding:4px;
+	cursor:pointer;
+	border:4px solid #F8F8F8;	
+}
+a.emo:hover img {
+	border:4px solid #FF4286;
+}
+
+#copiedMsg {
+	display:0;
+	font-size:10px;
+	font-weight:bold;
+	background-color:#fffbe7;
+	color:#ff8629;
+	padding:0px;
+
+}

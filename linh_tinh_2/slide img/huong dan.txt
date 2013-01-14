@@ -1,0 +1,32 @@
+﻿/*************************
+* Share Smilies v1.1 
+* Code by Chip Pro	
+* Y!m: chiplove.9xpro
+* Site: www.chiplove.biz
+**************************/
+
+
+
+Import database vào
+
+Login:
+
+user: admin
+pass: admin
+
+
+Update Share Smilies ver 1.1
+
++ Thay skin mới đẹp hơn
++ Thêm chức năng phân trang, upload nhiều smilies lên host hơn,chọn đc số smilies cần upload 1 lần. Nếu muốn chỉnh nhiều hơn thì mở file add_img.php để sửa cái $max_files = 99999 tùy ý ^^! hì
++ Quản lý chuyên nghiệp, thuận tiện hơn 
+
+
+Chú ý:
+
+ Mở file connect.php trong folder admin để sửa link admin + mở file index , dòng đầu tiên, sửa theo folder admin.
+Cái này do lúc viết code ver1.0 ko quan tâm lắm :D nên giờ phải sửa thế :D ( Tại lười sửa lại nhiều file :P )
+
+Okie !
+thía là xong
+Gút luk :D
