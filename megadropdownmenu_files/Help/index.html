@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>CSS3 Mega Drop Down Menu Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;CSS3 Mega Drop Down Menu&rdquo; Documentation by &ldquo;Template Keliah&rdquo; v1.1</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;CSS3 Mega Drop Down Menu&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created : 9/20/2010<br>
+					By: Keliah<br>
+					Email: <a href="mailto:keliahdesign@gmail.com">keliahdesign@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/keliah">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		<p><strong>NOTICE</strong> : you'll find an additional file in the css subfolder of each version, this "csshover3.htc" file is required only if you support Internet Explorer 6, if you remove it, the menu won't work at all under IE6.</p>		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+
+		<hr>
+
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>Please note that in each folder HTML files are the same. This menu has a fixed layout based upon the 960gs grid.</p>
+        
+        <p>Let's begin with the containers available for the drop downs, you can use from the smallest (130px) to the largest (700px). Then, within these containers, you can organize your content in 1, 2, 3, 4 or 5 columns.</p>
+        
+        <h2>Setting a container</h2>
+        
+        <p>These containers must be placed within a menu list item as follows :</p>
+        
+<pre>
+&lt;li&gt; &lt;a href="yourlink"&gt;yourlink&lt;/a&gt;
+
+    CONTAINER COMES HERE
+
+&lt;/li&gt;
+</pre>        
+       
+<p>And here is the list of the containers available :</p>
+        
+<p><strong>To add a 700px drop down :</strong></p>
+        
+<pre>
+&lt;div class="dropdown_5columns"&gt;
+
+    CONTENT IN 1, 2, 3, 4 OR 5 COLUMNS
+
+&lt;/div&gt;
+</pre>        
+        
+<p><strong>To add a 560px drop down :</strong></p>
+        
+<pre>
+&lt;div class="dropdown_4columns"&gt;
+
+    CONTENT IN 1, 2, 3 OR 4 COLUMNS
+
+&lt;/div&gt;
+</pre>        
+
+        
+<p><strong>To add a 420px drop down :</strong></p>
+        
+<pre>
+&lt;div class="dropdown_3columns"&gt;
+
+    CONTENT IN 1, 2 OR 3 COLUMNS
+
+&lt;/div&gt;
+</pre>        
+
+        
+<p><strong>To add a 280px drop down :</strong></p>
+        
+<pre>
+&lt;div class="dropdown_2columns"&gt;
+
+    CONTENT IN 1 OR 2 COLUMNS
+
+&lt;/div&gt;
+</pre>        
+
+        
+<p><strong>To add a 130px drop down :</strong></p>
+        
+<pre>
+&lt;div class="dropdown_1column"&gt;
+
+    CONTENT IN 1 COLUMN
+
+&lt;/div&gt;
+</pre>        
+
+<h2>Setting columns for your content</h2>
+
+<p>Then, within these containers, you can use from 1 up to 5 columns, but don't forget to check if your container is large enough for the columns you include. You'll notice that they are smaller than the containers, it's because of the paddings so the content doesn't stick to the edges.</p>
+
+<p>Here are the choices available :</p>
+
+<pre>
+&lt;div class="col_1"&gt;
+    
+    HERE COMES YOUR 130 PX WIDTH CONTENT
+
+&lt;/div&gt;
+</pre>
+
+<pre>
+&lt;div class="col_2"&gt;
+    
+    HERE COMES YOUR 270 PX WIDTH CONTENT
+
+&lt;/div&gt;
+</pre>
+
+<pre>
+&lt;div class="col_3"&gt;
+    
+    HERE COMES YOUR 410 PX WIDTH CONTENT
+
+&lt;/div&gt;
+</pre>
+
+<pre>
+&lt;div class="col_4"&gt;
+    
+    HERE COMES YOUR 550 PX WIDTH CONTENT
+
+&lt;/div&gt;
+</pre>
+
+<pre>
+&lt;div class="col_5"&gt;
+    
+    HERE COMES YOUR 690 PX WIDTH CONTENT
+
+&lt;/div&gt;
+</pre>
+
+
+		<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>I'm using 5 CSS files in this theme plus one additional (ie6.css) for the dark variant.</p>
+        
+        <p>The menu.css is structured, there are labels to help you find the section you need to modify :</p> 
+
+<pre>	/* 01 RESET */
+	some code
+
+	/* 02 PAGE STYLINGS */
+	some code
+	
+	/* 03 MENU BAR */
+	some code
+	
+	/* 04 DROP DOWN STYLINGS */
+	some code
+	
+	/* 05 CONTENT STYLINGS */
+	some code
+	
+	/* 06 CONTACT FORM */
+	some code
+	
+</pre>
+
+		<p>The menu.css situated in the "all_colors.css" contains stylings for all color variants, specific classes are used in the HTML to separate each style. You may prefer to use a specific color instead of this one.</p>
+        
+        <h2>CSS content</h2>
+        
+        <p>As you can see above, the file is divided in 6 sections :</p>
+        
+        <ul>
+        <li><strong>01 RESET</strong> : this is not necessary but I highly recommend you to use a reset at the very beginning of your main CSS file, otherwise, browsers may display the content in an unexpected way (see the sources below for a link with more information).</li>
+        <li><strong>02 PAGE STYLINGS</strong> : in this section you'll find general stylings such as typography, images (borders, floating), general lists stylings.</li>
+        <li><strong>03 MENU BAR</strong> : This section is one of the most importants, it defines the main navigation bar. There are some color stylings and everything which is required for the main navigation.</li>
+        <li><strong>04 DROP DOWN STYLINGS</strong> : this part contains all stylings for the drop downs : show / hide properties, left or right alignment and columns properties (you can use from 1 to 5 columns).</li>
+        <li><strong>05 CONTENT STYLINGS</strong> : this part contains specific stylings for all the content appearing in the drop down : text boxes, lists and icons.</li>
+        <li><strong>06 CONTACT FORM</strong> : I've put here som basic stylings for a simple contact form, please note that this contact form is NOT working, it's here for showing purposes only.</li>
+        </ul>
+        
+        <h2>Working with colors</h2>
+        
+        <p>This item comes with 9 color variants, each one has it's own folder, but you may want to create your own color scheme. For this example, we'll see the black variant : open "menu.css" and scroll down until you find the label <strong>.menu</strong>. This class defines the color of the main menu bar with the following attributes :</p>
+        
+        <pre>	/* Colors */
+
+	background: #333;
+	border: 1px solid #444;
+	border-top: 1px solid #777;
+	
+	/* CSS 3 Stylings */
+	
+	background: -moz-linear-gradient(top, #555, #2a2a2a);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#2a2a2a));
+</pre>
+
+		<p>The "background" must be set for browsers which don't support CSS3 properties, in this case, we have the color #333 and this value is overwritten by the CSS3 attributes in the case the user is using a recent browser supporting CSS3, so the 2 last lines define a gradient from the top (color : #555) to the bottom (color : #2a2a2a).</p>
+        
+        <p>A border is set to match the other colors, as you can see it's a bit lighter (#444) and the top border even more lighter (#777).</p>
+        
+        <p>All the above properties, as I said before, determine the colors of the navigation bar.</p>
+        
+        <p>The second thing concerning color are links within the drop down content. These colors are defined in the same file, scroll a little bit down and you'll find the 3 following classes :</p>
+        <ul>
+        <li><strong>.menu li:hover div a</strong></li>
+        <li><strong>.menu li:hover div a:hover</strong></li>
+        <li><strong>.menu li ul li a:hover</strong></li>
+		</ul>
+        
+        <p>The first one defines a default link color and the 2 others define the color of the link on mouse hover. So in our black example, the link has the #444 color and becomes #777 on mouse hover.</p>
+        
+        <p>That's all for the colors specific attributes.</p>
+        
+		<h3 id="credits"><strong>C) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+
+        <h4>CSS</h4>
+        
+		<ul>
+			<li><a href="http://960.gs/">960Grid</a></li>
+			<li><a href="http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/">Reset CSS</a></li>
+		</ul>
+
+        <h4>Graphics</h4>
+        
+		<ul>
+			<li><a href="http://kyo-tux.deviantart.com/art/GiNUX-126818033">GiNUX Icon Set</a></li>
+            <li><a href="http://www.smashingmagazine.com/2010/04/15/the-ultimate-free-web-designer-s-icon-set-750-icons-incl-psd-sources/">The Ultimate Free Web Designer's Icon Set (750 icons, incl. PSD sources)</a></li>
+			<li><a href="http://www.profimagazin.cz/ikony/socialni-ikony-vcetne-ceskych-linkovacich-sluzeb-ke-stazeni-zdarma">Social Icons</a></li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Keliah</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

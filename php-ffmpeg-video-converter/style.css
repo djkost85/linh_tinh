@@ -1,0 +1,36 @@
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#08B2FF;
+}
+
+td {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+th {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.blue_font {
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #08B2FF;
+}
+.radio_buttons{
+
+	background-color:#FFFFFF;
+	color:#08B2FF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	padding:2px;
+}
+.blue_background{
+
+	background-color:#08B2FF;
+	color:#FFFFFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	padding:2px;
+}

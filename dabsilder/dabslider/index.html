@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+  <title>Dab News Slider with vertical slide effect</title>
+  <link rel="stylesheet" title="oravge" href="css/orange.css" type="text/css" />
+  <link rel="alternate stylesheet" title="lime" href="css/lime.css" type="text/css" />
+  <link rel="alternate stylesheet" title="blue" href="css/blue.css" type="text/css" />
+  <link rel="alternate stylesheet" title="cyan" href="css/cyan.css" type="text/css" />
+  <link rel="alternate stylesheet" title="brown" href="css/brown.css" type="text/css" />
+  <link rel="alternate stylesheet" title="red" href="css/red.css" type="text/css" />
+    <script src="script/styleswitch.js" type="text/javascript"></script>
+  <script type="text/javascript" src="script/mootools.js"></script>
+  <script type="text/javascript" src="script/dabnews.js"></script>
+  <script type="text/javascript">
+		window.addEvent('load', function(){
+			new dabnews({
+				outerContainer : 'dabnews_outer', <!------- Outer DIV ID ------------->
+				innerContainer : 'dabnews_inner', <!------- Inner DIV ID ------------->
+				elements: '.dabnews_slide', <!------- CSS class applied to news slides ------------->
+				navigation: {
+					'forward':'dabnews_right', <!------- Right navigation link id ------------->
+					'back':'dabnews_left',		<!------- Left navigation link ID ------------->
+					container: 'dabnews_inner_nav', <!------- Navigation contaner DIV ID ------------->
+					elements:'.dabnews_navLink',	<!------- Class applied to news navigation links ------------->
+					outer: 'dabnews_nav', <!------- News navigation links container DIV ID ------------->
+					visibleItems:5		
+				},
+				navInfo: 'dabnews_nav_info',
+				navLinks: '.dabnews_navLink',	<!------- CSS class applied to navigation links ------------->
+				slideType: 1,
+				orientation: 0,<!--Direction in which the news will slide-->
+				slideTime: 6000,	<!------- Time in ms for which the slide will appear ------------->
+				duration: 600,		<!------- Time in ms in the slide will toggle ------------->
+				tooltips:0,
+				autoslide:0,<!--Set 0 for autoslide or 1 to disable auto-->
+				startElem:2
+	
+			});
+		});
+		
+
+  </script>
+  	<link href="css/page.css" rel="stylesheet" type="text/css" />
+  
+		</head>
+<body id="stylef6">
+<h1>News Slider with Vertical Slide effect</h1>	  
+<form id="switchform">
+<div style="float:right">
+<a href="javascript:theme_chooseStyle('orange', 60)" checked="checked"><img src="images/styles/orange.gif" /></a>
+<a href="javascript:theme_chooseStyle('blue', 60)" ><img src="images/styles/blue.gif" /></a>
+<a href="javascript:theme_chooseStyle('lime', 60)" ><img src="images/styles/lime.gif" /></a>
+<a href="javascript:theme_chooseStyle('cyan', 60)" ><img src="images/styles/cyan.gif" /></a>
+<a href="javascript:theme_chooseStyle('red', 60)" ><img src="images/styles/red.gif" /></a>
+<a href="javascript:theme_chooseStyle('brown', 60)" ><img src="images/styles/brown.gif" /></a></div>
+</form>      
+<div style="width:956px; margin:50px auto 0px; display:block; position:relative;">
+  <div id="dabnews_outer" class="slide" style="width:956px; height:260px;">
+    <div id="dabnews_inner" style="width:956px;">
+                 
+     <!--News slide 1 start-->
+      <div class="dabnews_slide" style="width:956px; height:260px; display:none">
+       <a href="http://www.google.com/" title="">
+        <img src="images/news/samsunggalaxys.jpg" border="0"  class="dabnews_navlink" title="Product Info :: Way to play with        galaxy , Samsung Galaxy S"  alt=""/></a>
+       <div class="dabnews_description" style="width:420px;"> 
+       <div class="title">Way to play with galaxy , Samsung Galaxy S <div class="slide_cat"><a href="#">More Product Info news       </a></div></div>
+       <p>Samsung Electronics remains committed to designing safe, reliable and attractive mobile phones that meet our strict  						design and industry-leading quality standards... </p>
+      <a href="#" title="" class="dabnews_more">Read more</a>
+      </div>
+      </div>  <!--End News Slide-->
+      
+     <!--News slide 2 start-->
+      
+   <div class="dabnews_slide" style="width:956px; height:260px; display:none"> 
+   <a href="#" title=""><img src="images/news/sonyex10.jpg" border="0"  class="dabnews_link" title="Product Info :: Sony Ericsson Xperia X10 best of Sony "  alt=""/></a>
+        <div class="dabnews_description" style="width:420px;">
+         <div class="title">Sony Ericsson Xperia X10 best of Sony <div class="slide_cat"><a href="#">More Product Info news</a></div></div>
+          <p>Sony Ericsson XPERIA X10  is touch-driven handset packs a huge 4" 262K-color display with the class-leading resolution of 854 x 480 pixels and an 8MP camera with LED flash... </p>
+                    <a href="#" title="" class="dabnews_more">Read more</a>
+       </div>
+       </div><!-- End Nes Slide -->
+   <!--News slide 3 start-->
+   
+  <div class="dabnews_slide" style="width:956px; height:260px; display:block"> 
+   <a href="#" title=""><img src="images/news/ipadtouch.jpg" border="0"  class="dabnews_link" title="Product Info :: Ipod touch offer you video calls,HD video..."  alt=""/></a>
+   <div class="dabnews_description" style="width:420px;"> 
+   <div class="title">Ipod touch offer you video calls,HD video...<div class="slide_cat"><a href="#">More Product Info news</a>   </div></div>
+   <p>Because your iPod touch — and its built-in HD video camera — go with you everywhere, you're always ready to record when the moment strikes. And now you can do it... </p>
+   <a href="#" title="" class="dabnews_more">Read more</a>
+  </div></div><!-- End Nes Slide -->
+  
+<!--News slide 4 start--> 
+ 
+  <div class="dabnews_slide" style="width:956px; height:260px; display:none"> 
+  	<a href="#" title=""><img src="images/news/bbbold.jpg" border="0"  class="dabnews_link" title="Product Info :: Only a few 	smartphones really matter to me now"  alt=""/></a>
+ 	 <div class="dabnews_description" style="width:420px;"> 
+     <div class="title">Only a few smartphones really matter to me now<div class="slide_cat"><a href="#">More Product Info news			</a></div></div>
+     <p>BlackBerry Bold smartphone - Crafted from premium materials, inside and out, that radiate elegance with a dramatic presence, the BlackBerry Bold  is designed to give business...</p>
+      <a href="#" title="" class="dabnews_more">Read more</a>
+     </div>
+      </div><!-- End Nes Slide -->
+      
+<!--News slide 5 start-->      
+  <div class="dabnews_slide" style="width:956px; height:260px; display:none"> 
+  <a href="#" title=""><img src="images/news/iphone4.jpg" border="0"  class="dabnews_link" title="Product Info :: iPhone 4. In so many ways, it's a first."  alt=""/></a>
+    <div class="dabnews_description" style="width:420px;"> 
+    <div class="title">iPhone 4. In so many ways, it's a first.<div class="slide_cat"><a href="#">More Product Info news</a></div></div>
+    <p>When creating iPhone 4, Apple designers and engineers didn't start with a clean sheet of paper. They started with three years of experience designing and building the phones...</p>
+    <a href="#" title="" class="dabnews_more">Read more</a>
+    </div>
+    </div><!-- End Nes Slide -->
+    
+ <!--News slide 6 start-->  
+  
+    <div class="dabnews_slide" style="width:956px; height:260px; display:none"> 
+     <a href="#" title=""><img src="images/news/htcherowhite.jpg" border="0"  class="dabnews_link" title="Product Info :: HTC hero white everything you need for business"  alt=""/></a>
+        <div class="dabnews_description" style="width:420px;"> 
+        <div class="title">HTC hero white everything you need for business   <div class="slide_cat"><a href="#">More Product Info news</a></div></div>
+          <p>Imagine being able to page through websites, write an email, flick through photos, or watch a movie. All on a big, beautiful Multi-Touch screen. With just the touch of a finger.</p>
+         <a href="#" title="" class="dabnews_more">Read more</a>
+       </div>
+      </div><!-- End Nes Slide -->
+      
+ <!--News slide 7 start--> 
+             
+   <div class="dabnews_slide" style="width:956px; height:260px; display:none"> 
+   <a href="#" title=""><img src="images/news/iphone3gs.jpg" border="0"  class="dabnews_link" title="Product Info :: iPhone 3GS. More to love. Less to apy."  alt=""/></a>
+        <div class="dabnews_description" style="width:420px;"> 
+        <div class="title">iPhone 3GS. More to love. Less to apy.<div class="slide_cat"><a href="#">More Product Info news</a>		</div></div>
+          <p>Keep applications open in the background. Organize your apps with folders. Shop for books in the iBookstore. The 8GB iPhone 3GS takes advantage of all the great...</p>
+       <a href="#" title="" class="dabnews_more">Read more</a>
+      </div>
+      </div><!-- End Nes Slide -->
+      
+ <!--News slide 8 start-->             
+  <div class="dabnews_slide" style="width:956px; height:260px; display:none"> 
+    <a href="#" title=""><img src="images/news/macbookair.jpg" border="0"  class="dabnews_link" title="Product Info :: Precision aluminum unibody enclosure."  alt=""/></a>
+        <div class="dabnews_description" style="width:420px;"> 
+        <div class="title">Precision aluminum unibody enclosure.<div class="slide_cat"><a href="#">More Product Info news</a></div></div>
+          <p>The revolutionary, precision aluminum unibody design is inherently strong, and it's part of what allows MacBook Air to weigh only 3.0 pounds1 and to be nearly...</p>
+        <a href="#" title="" class="dabnews_more">Read more</a>
+      </div>
+      </div><!-- End Nes Slide -->
+      
+<!--News slide 9 start-->  
+               
+   <div class="dabnews_slide" style="width:956px; height:260px; display:none">
+    <a href="#" title=""><img src="images/news/sonyex10.jpg" border="0"  class="dabnews_link" title="Product Info :: Sony Ericsson Xperia X10 best of Sony "  alt=""/></a>
+        <div class="dabnews_description" style="width:420px;"> 
+        <div class="title">Sony Ericsson Xperia X10 best of Sony <div class="slide_cat"><a href="#">More Product Info news</a></div></div>
+          <p>Sony Ericsson XPERIA X10  is touch-driven handset packs a huge 4" 262K-color display with the class-leading resolution of 854 x 480 pixels and an 8MP camera with LED flash... </p>
+         <a href="#" title="" class="dabnews_more">Read more</a>
+      </div>
+      </div><!-- End Nes Slide -->
+      
+<!--News slide 10 start--> 
+                 
+ <div class="dabnews_slide" style="width:956px; height:260px; display:none"> 
+   <a href="#" title=""><img src="images/news/imac.jpg" border="0"  class="dabnews_link" title="Product Info :: The ultimate all-in one. Turbocharged"  alt=""/></a>
+      <div class="dabnews_description" style="width:420px;"> 
+      <div class="title">The ultimate all-in one. Turbocharged <div class="slide_cat"><a href="#">More Product Info news</a></div></div>
+       <p>iMac,the ultimate all-in-one turbocharged.Now with the ultimate display.Big LED-backlit displays.iMac features a bright 21.5-inch or 27-inch LED-backlit display with a widescreen...</p>
+        <a href="#" title="" class="dabnews_more">Read more</a>
+        </div>
+        </div><!-- End Nes Slide -->
+  </div>
+  <!--End Inner Container-->
+ </div> <!--End Outer Container-->
+ 
+  <!--News Navigation Start-->
+  <div class="navContainer" style="width:956px;"> 
+  <a href="#" title="previous" id="dabnews_left"></a> <!--Previous News Link--> 
+  <a href="#" title="next" id="dabnews_right"></a> <!--Next News Link-->
+    <div id="dabnews_nav" style="width:836px;">
+      <div class="nav_inner" id="dabnews_inner_nav">
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::The ultimate all-in one. Turbocharged">
+						<span class="slider_nav_intro">iMac,the ultima</span>
+						<span class="slide_img" style="background:url(images/news/imac.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::Sony Ericsson Xperia X10 best of Sony ">
+						<span class="slider_nav_intro">Sony Ericsson</span>
+						<span class="slide_img" style="background:url(images/news/sonyex10.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::Only a few smartphones really matter to me now">
+						<span class="slider_nav_intro">BlackBerry Bold</span>
+						<span class="slide_img" style="background:url(images/news/bbbold.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::Ipod touch offer you video calls,HD video...">
+						<span class="slider_nav_intro">Because your iP</span>
+						<span class="slide_img" style="background:url(images/news/ipadtouch.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::HTC hero white everything you need for business">
+						<span class="slider_nav_intro">Imagine being a</span>
+						<span class="slide_img" style="background:url(images/news/htcherowhite.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::Precision aluminum unibody enclosure.">
+						<span class="slider_nav_intro">The revolutiona</span>
+						<span class="slide_img" style="background:url(images/news/macbookair.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::Way to play with galaxy , Samsung Galaxy S">
+						<span class="slider_nav_intro">Samsung Electro</span>
+						<span class="slide_img" style="background:url(images/news/samsunggalaxys.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::The best way to experience the web, email, photos,  and video. Hands down">
+						<span class="slider_nav_intro">Imagine being a</span>
+						<span class="slide_img" style="background:url(images/news/imac.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::iPhone 3GS. More to love. Less to apy.">
+						<span class="slider_nav_intro">Keep applicatio</span>
+						<span class="slide_img" style="background:url(images/news/iphone3gs.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+        		
+					<a href="#" class="dabnews_navLink" title="Navigate to  ::iPhone 4. In so many ways, it’s a first.">
+						<span class="slider_nav_intro">When creating i</span>
+						<span class="slide_img" style="background:url(images/news/iphone4.jpg) no-repeat center 50%;"></span>
+					</a>
+	
+              </div>
+    </div>
+  </div><!--End News Navigation-->
+</div>
+<h2>Demos</h2>
+<a href="index.html"><h3>Vertical Slide Effect</h3></a>
+<a href="index-1.html"><h3>Fade Slide Effect</h3></a>
+<a href="index-2.html"><h3>Horizontal Slide Effect</h3></a>
+</body>
+</html>

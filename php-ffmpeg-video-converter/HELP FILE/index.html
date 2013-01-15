@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>PHP + ffmpeg video converter</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;PHP + ffmpeg video converter&rdquo; Documentation by igor_s v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;PHP + ffmpeg video converter&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 10/09/2010<br>
+					By: Igor Simic<br>
+					Email: <a href="mailto:igor.simic@yahoo.com">igor.simic@yahoo.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/igor_s">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#Script_structure">PHP Code Explanation</a></li>
+			<li><a href="#Requirements">Requirements (all included in package)</a></li>
+			<li><a href="#Installation">Installation</a></li>
+			<li><a href="#Usage2">Usage</a></li>
+			<li><a href="#Usage">How to use it in my project</a></li>
+			<li><a href="#Sources">Sources</a></li>
+			
+			
+		</ol>
+		
+		<hr>
+		
+		<h3 id="Script_structure"><strong>A) PHP Code Explanation</strong> - <a href="#toc">top</a></h3>
+		<p>How this script works<br>There are 5 php files for five steps in video converting proces:
+		<br>
+			<br><strong>Step 1 (step_1.php)</strong>
+			<br>
+			Select a video
+			<br>
+			 <ul>
+			 <li>- simple html upload video</li>
+			 <li>- when upload file is chosen javasript code is activated to check is the extension allowed before start uploading, if is not allowed -> upload button is disabled - file step_1.php lines 19-35</li>
+			 <li>if everything is OK upload button is clickable upload can be started</li>
+			 
+			 </ul>
+			
+		
+		</p>
+		<br><strong>Step 2.1 (step_2.php)</strong>
+			<br>
+			Define variables<br><br>
+			 <ul>
+			 <li>- define a <u>new video name</u> / in this example i am using php's <span style="color:blue;">microtime()</span> as you can see in step_2.php at lines 31,32,33,35 variable  <span style="color:red;">$name</span> is defined <br>
+			 	this variable is used for new video name, log file, img file and img convertion log file nane. Also is used for rename input file for preventing special characters in input file name - which mean all files created during process will have same name for specific video - makes easier to find log file or image log file </li>
+			<li> set variable <span style="color:red">$max_upload_size</span> at step_2.php line 40 which represent max input file size (this must be lower value then in php.ini max_input_size)  </li>
+			<li> define a directories where input (<span style="color:red">$temp_dir</span>) and output videos(<span style="color:red">$converted_vids</span>) will be placed at step_2.php lines 43,44</li>
+			<li>  define allowed input formats <span style="color:red">$allowedExtensions</span> at line 58 (note: those file types must be same as in step_1.php at line 21)  </li>
+			<li> in this step user is able to set the output format, video and audio quality, these options are placed in <span style="color:gray">form</span> called "<em>choose</em>" at line 144<br>
+			</li>
+			<li> if user choose output video format then all options are available:size, video quality, and audio aquality  </li>
+			<li> if user choose output audio format(mp3) then all options except audio quality are disabled - because there is no need to set up video size and quality if output is audio file</li>
+			</ul>
+		
+		
+		
+		
+		<img src="assets/images/step_2.png" alt="HTML Structure" />
+		
+		
+		
+		
+		<br><strong>Step 2.2 (step_2_2.php)</strong>
+			<br>
+			Converting video<br><br>
+			 <ul>
+			 	<li>In this step ffmpeg is converting video for a choosen format (step_2_2.php lines 47 - 57)</li>
+				<li>In step_2_2.php at lines 75-86 javascript is calling listening.php file every second to see is the conversion finished and to read output file size. Results are displayed at step_2_2.php line 86 In  Div <em>timeval</em>
+				<li> file listening.php is reading log (log/$name.txt) file which ffmpeg is creating to see are there any errors during conversion or is the new file finished</li>
+				<li>new video is named with <span style="color:red;">$name</span> variable and stored in <span style="color:red;">$converted_vids</span> folder</li>
+				<li>after the conversion is finished, duration time is displayed (listening.php lines 58-65)</li>
+						
+			 	 </ul>	
+				 
+				 <img src="assets/images/step_2_2.png" alt="HTML Structure" />	
+				 
+				 
+				 
+				 <br><strong>Step 3 (step_3.php)</strong>
+			<br>
+			Extract image from video<br><br>
+			 <ul>
+				<li>based on a total video duration, converted into seconds splits by 2, ffmpeg is extracting the image from new video</li>
+				<li> image is named with <span style="color:red;">$name</span> variable and stored in folder <span style="color:red;">video_images/$name.jpg</span> </li>
+				<li> step_3.php lines 55-66 <strong>contains usefull variables for your projects</strong>. there are new video name <span style="color:red;">$_SESSION['name']</span>, type <span style="color:red;">$_SESSION['type']</span> and duration <span style="color:red;">$_SESSION['duration']</span>, duration in seconds <span style="color:red;">$_SESSION['time_in_seconds']</span> and img name <span style="color:red;">$_SESSION['image_name'] </span></li>
+				</ul>
+				 
+				 
+			<br><strong>Step 4 (step_4.php)</strong>
+			<br>
+			Displaying your video / audio<br><br>
+			 <ul>	  
+			 <li> at this step preview of your video is displayed (.flv only), or download link(all other formats) </li>
+			 <li>flowplayer is used for .flv formats</li>
+			 </ul>
+
+		<hr>
+
+		<h3 id="Installation"><strong>B) Installation</strong> - <a href="#toc">top</a></h3>
+		
+		<ul>
+		<li> copy all files to your web server<li>
+		<li> download and place ffmpeg.exe in same folder with php files <br> links for download: <ul><li><a href="http://www.fuchka.net/download/ffmpeg.rar" target="_blank"><u>ffmpeg.rar</u></a> -> for windows 32 only</li>
+		<li><a href="http://ffmpeg.arrozcru.org/autobuilds/" target="_blank"><u>latest ffmpeg builds</u></a> -> win 32/64 & MAC OS </li></ul></li>
+		<li><span style="color:red;">note for linux users</span>:<br>
+			ffmpeg on linux is located on different location, usualy at /usr/bin/ffmpeg, therefore you sholud replace files in main directory step_2_2.php and step_3.php with files from <em>for linux users</em> folder. <br>If your ffmpeg is placed on diferent location (on linux server) then some code must be changed at  php files step_2_2.php and step_3.php<br> in step_2_2.php on lines 47,50,52,54,56  you should replace "/usr/bin/ffmpeg" with your ffmpeg location and do the same in step_3.php at line 40</li>
+        <li> change <span style="color:brown;">php.ini</span> settings<br>
+				- max_input_time= -1 --> unlimited time<br>
+				- post_max_size = 50 --> maximum upload size of a file in MB (in this example 50 is for 50 MB )<br>
+                - upload_max_filesize= 50 --> same as post_max_size in MB<br>
+		<li> in step_2.php at line 40  <span style="color:red;">$max_upload_size=40</span>  is set to 40 MBs, this will prevent uploading files bigger then 40 MB to upload (settings in php.ini and this variable should not be set to same size, this variable must be set to lower size then php.ini)</li>
+		<li> for IE 7-8 users add this site to trusted sites</li>
+		</ul>
+		<hr>
+		
+		<h3 id="Requirements"><strong>C) Requirements</strong> - <a href="#toc">top</a></h3>
+		
+		<ul>
+		
+		<li> php 5.x (not tested on lower versions)</li>
+		<li> ffmpeg.exe (for windows server or ffmpeg for unix)</li>
+		<li> flowplayer (optional)</li>
+		<li>jquery</li>
+
+		<li> http://ffmpeg.arrozcru.org/autobuilds/  - latest ffmpeg.exe builds</li>
+		<li> http://flowplayer.org/download/index.html - flowplayer</li>
+		</ul>
+		<hr>
+		
+		
+		<h3 id="Usage2"><strong>D) Usage</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>1. start step_1.php</li>
+			<li> 2. choose your video file and follow instructions </li>
+			<li> 3. only extensions for videos are enabled for upload - if you choose some non-suported extesnion you will get alert window BEFORE upload is started</li>
+			<li> 4. Choose output video type and quality settings</li>
+			<li> 5. wait until conversion is over - new video duration is displayed</li>
+			<li> 6. image for video is created</li>
+			<li> 7. preview your video / or download link is shown</li>
+			<li> 8. log file is created for every video conversion and image creation</li>
+		</ul>
+		
+		<hr>
+		
+		<h3 id="Usage"><strong>E) How to use it in my project</strong> - <a href="#toc">top</a></h3>
+		
+		You can include variables about converted video in your project in easy way, all usable varibales are stored in <span style="color:red;">$_SESSIONS[]</span>, all you need is use those sessions in your project. Sessions are listed at the step_3.php at line 55
+		<br><br><strong>Sessions which you can use</strong>
+		<ul>
+		<li> video name <span style="color:red;">$_SESSION['name']</span></li>
+		<li> type <span style="color:red;">$_SESSION['type']</span></li>
+		<li> duration <span style="color:red;">$_SESSION['duration']</span></li>
+		<li> duration in seconds <span style="color:red;">$_SESSION['time_in_seconds']</span></li>
+		<li> img name <span style="color:red;">$_SESSION['image_name'] </span>
+		</li></ul>
+		<hr> 
+		
+		<h3 id="Sources"><strong>F) Sources</strong> - <a href="#toc">top</a></h3>
+		
+			<ul>
+			<li> http://ffmpeg.arrozcru.org/autobuilds/  - latest ffmpeg.exe builds</li>
+			<li> http://flowplayer.org/download/index.html - flowplayer</li>
+			<li> http://jquery.com/ - jquery</li>
+			</ul>
+		
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this application. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Igor Simic</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
