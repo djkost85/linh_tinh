@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<TITLE>Editor Attributes For CustomizationEditor Attributes For Customization - Kind Editor-Web WYSIWYG Online Editor</TITLE>
+<link href="prettify.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="box">
+  <div class="right">
+     <h2>Kind Editor Documentation</h2>
+     <ul>
+       <li>
+         <a href="add-editor-to-your-web-page.html">Add Editor To Your Web Page</a>
+         </li><li>
+         <a href="editor-attributes-for-customization.html">Editor Attributes For Customization</a>
+         </li><li>
+         <a href="faq.html">FAQ</a>
+         </li><li>
+         <a href="kind-editor-api.html">Kind Editor API</a>
+         </li><li>
+         <a href="write-web-editor-plugin.html">Write Web Editor Plugin</a>
+         </li>     </ul>
+  </div>
+  <div><h1 class="standalone">Editor Attributes For Customization</h1></div>
+  <div class="main">
+   <div class="left">
+    <dl>
+     <p><div class="margin-20">
+<div class="myblock">
+<div class="header">Editor Attributes</div>
+The following atributes can be passed in when <strong>KE.show</strong>or<strong>KE.init</strong> is called.
+<ol>
+    <li><strong>id</strong><br />
+    ID of TEXTAREA. Must be specified.<br />
+    Type:String</li>
+    <li><strong>items</strong><br />
+    Tool bar items. &quot;-&quot; for a new line.<br />
+    Type:Array<br />
+    Default:
+    <pre class="prettyprint"><span class="pun">[</span><span class="str">'source'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'fullscreen'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'undo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'redo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'print'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'cut'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'copy'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'paste'</span><span class="pun">,</span><span class="pln"><br /></span><span class="str">'plainpaste'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'wordpaste'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'justifyleft'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'justifycenter'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'justifyright'</span><span class="pun">,</span><span class="pln"><br /></span><span class="str">'justifyfull'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'insertorderedlist'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'insertunorderedlist'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'indent'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'outdent'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'subscript'</span><span class="pun">,</span><span class="pln"><br /></span><span class="str">'superscript'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'selectall'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'-'</span><span class="pun">,</span><span class="pln"><br /></span><span class="str">'title'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'fontname'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'fontsize'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'textcolor'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'bgcolor'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'bold'</span><span class="pun">,</span><span class="pln"><br /></span><span class="str">'italic'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'underline'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'strikethrough'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'removeformat'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'image'</span><span class="pun">,</span><span class="pln"><br /></span><span class="str">'flash'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'media'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'table'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'hr'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'emoticons'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'link'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'unlink'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'about'</span><span class="pun">]</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></pre>
+    </li>
+    <li><strong>width</strong><br />
+    Editor width, ending with &quot;px&quot; or &quot;%&quot;. Inline width style of TEXTAREA will be ignored if this attribute is set.<br />
+    Type:String</li>
+    <li><strong>height</strong><br />
+    Editor width, ending with &quot;px&quot;. Inline height style of TEXTAREA will be ignored if this attribute is set<br />
+    Type:String</li>
+    <li><strong>minWidth</strong><br />
+    Editor minimun width in px.<br />
+    Type:Int<br />
+    Default:200</li>
+    <li><strong>minHeight</strong><br />
+    Editor minimun height in px.<br />
+    Type:Int<br />
+    Default:100</li>
+    <li><strong>filterMode</strong><br />
+    Only HTML tags/attributes name defined in htmlTags will be accepted when set to true, or false to accept all tags. <br />
+    Type:Boolean<br />
+    Default:false</li>
+    <li><strong>htmlTags</strong><br />
+    HTML tags/attributes names to be accepted. Keys for HTML tag names, values HTML attributes. Ones starting with &quot;.&quot; for style names.<br />
+    Type:Object<br />
+    Default:
+    <pre class="prettyprint"><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; font </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'color'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'size'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'face'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'.background-color'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; span </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'style'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; div </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'class'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'align'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'style'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; table</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'class'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'border'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'cellspacing'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'cellpadding'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'width'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'height'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'align'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'style'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">'td,th'</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'class'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'align'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'valign'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'width'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'height'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'colspan'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'rowspan'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'bgcolor'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'style'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; a </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'class'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'href'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'target'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'name'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'style'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; embed </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'src'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'width'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'height'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'type'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'loop'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'autostart'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'quality'</span><span class="pun">,</span><span class="pln"><br /></span><span class="str">'style'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'align'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'allowscriptaccess'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'/'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; img </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'src'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'width'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'height'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'border'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'alt'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'title'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'align'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'style'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'/'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; hr </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'class'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'/'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; br </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'/'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">'p,ol,ul,li,blockquote,h1,h2,h3,h4,h5,h6'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'align'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'style'</span><span class="pun">],</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">'tbody,tr,strong,b,sub,sup,em,i,u,strike'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[]</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></pre>
+    <span style="color: red">Note: This attribute works only when filterMode is set to true.</span></li>
+    <li><strong>resizeMode</strong><br />
+    Could be 2 or 1 or 0. 2 for that width and height are both resizable, 1 for height, 0 for none.<br />
+    Type:Int<br />
+    Default:2</li>
+    <li><strong>skinType</strong><br />
+    Theme name. Could be &quot;default&quot; or &quot;office&quot;.<br />
+    Type:String<br />
+    Default:oxygen</li>
+    <li><strong>wyswygMode</strong><br />
+    True for WYSIWYG view or false for code view.<br />
+    Type:Boolean<br />
+    Default:true</li>
+    <li><strong>autoOnsubmitMode</strong><br />
+    If it's set to true, HTML generated by kind editor will be filled back into TEXTAREA when onsubmit of form is fired.<br />
+    Type:Boolean<br />
+    Default:true</li>
+    <li><strong>cssPath</strong><br />
+    Css path for editor. <br />
+    Type:String<br />
+    Default:&quot;&quot;(empty)</li>
+    <li><strong>skinsPath</strong><br />
+    Theme path for css and images files.<br />
+    Type:String<br />
+    Default: KE.scriptPath + 'skins/'</li>
+    <li><strong>pluginsPath</strong><br />
+    Path of plugins.<br />
+    Type:String<br />
+    Default:KE.scriptPath + 'plugins/'</li>
+    <li><strong>minChangeSize</strong><br />
+    Only after more than <strong>minChangeSize</strong> charactors change, a snapshot&nbsp; will be taken and put into redo/undo stack.<br />
+    Type: Int<br />
+    Default:5</li>
+    <li><strong>loadStyleMode</strong><br />
+    To load css file automatically or not. True for yes, false for no.<br />
+    Type:Boolean<br />
+    Default: true</li>
+    <li><strong>urlType</strong><br />
+    URL type. Could be relative/absolute/domain. Relative for relative path, absolute for absolute path, domain for absolute path with domain name.<br />
+    Type:Boolean<br />
+    Default:relative</li>
+    <li><strong>newlineTag</strong><br />
+    Tag for new line when end user presses &quot;Enter&quot; key.<br />
+    Type:Boolean<br />
+    Default:br</li>
+</ol>
+Sample:
+<pre class="prettyprint"><span class="pln">KE</span><span class="pun">.</span><span class="pln">show</span><span class="pun">({</span><span class="pln"><br />&nbsp; &nbsp; id </span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;content_1&quot;</span><span class="pun">,</span><span class="pln"><br />&nbsp; &nbsp; width </span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;70%&quot;</span><span class="pun">,</span><span class="pln"> </span><span class="pln"><br />&nbsp; &nbsp; height </span><span class="pun">:</span><span class="pln"> </span><span class="str">&quot;200px&quot;</span><span class="pun">,</span><span class="pln"><br />&nbsp; &nbsp; filterMode </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln"> </span><span class="com">//no filter applied on raw HTML</span><span class="pln"><br />&nbsp; &nbsp; resizeMode </span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="com">//height resizable only</span><span class="pln"><br /></span><span class="pun">});</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; </span></pre>
+</div>
+</div></p>
+    </dl>
+   </div>
+  </div>
+  <div class="footer">
+     <div class="copyright"> 
+       <span class="r">Copyright &copy; 2005-2009 Kindsoft LLC, All Rights Reserved.
+     </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<TITLE>Add Editor To Your Web PageAdd Editor To Your Web Page - Kind Editor-Web WYSIWYG Online Editor</TITLE>
+<link href="prettify.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="box">
+  <div class="right">
+     <h2>Kind Editor Documentation</h2>
+     <ul>
+       <li>
+         <a href="add-editor-to-your-web-page.html">Add Editor To Your Web Page</a>
+         </li><li>
+         <a href="editor-attributes-for-customization.html">Editor Attributes For Customization</a>
+         </li><li>
+         <a href="faq.html">FAQ</a>
+         </li><li>
+         <a href="kind-editor-api.html">Kind Editor API</a>
+         </li><li>
+         <a href="write-web-editor-plugin.html">Write Web Editor Plugin</a>
+         </li>     </ul>
+  </div>
+  <div><h1 class="standalone">Add Editor To Your Web Page</h1></div>
+  <div class="main">
+   <div class="left">
+    <dl>
+     <p><div class="margin-20">
+<div class="myblock">
+<div class="header">How To Add Kind Editor To You Page</div>
+<ol>
+    <li>Download latest version of KindEditor.<a target="_blank" href="http://www.kindeditor.com/index.php/Download">click to download</a></li>
+    <li>Unzip it and upload it to one directory of your site. For example, http://yourdomain.com/editor/</li>
+    <li>Add a TEXTAREA element to where you would like it to appear.<br />
+    You must assign an id to it. You'd better set height or width to make sure every kind of browser treat it in the same way.
+    <pre class="prettyprint"><span class="pun">&lt;</span><span class="tag">textarea</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">&quot;content_1&quot;</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">&quot;content&quot;</span><span class="pln"> </span><span class="atn">cols</span><span class="pun">=</span><span class="atv">&quot;100&quot;</span><span class="pln"> </span><span class="atn">rows</span><span class="pun">=</span><span class="atv">&quot;8&quot;</span><span class="pln">  </span><span class="atn">style</span><span class="pun">=</span><span class="atv">&quot;</span><span class="str">width:700px;height:300px;</span><span class="atv">&quot;</span><span class="pun">&gt;<!--</span--><span class="tag">textarea</span><span class="pun">&gt;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></span></pre>
+    </li>
+    <li>Add the following code to head section
+    <pre class="prettyprint"><span class="pun">&lt;</span><span class="tag">script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">&quot;text/javascript&quot;</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">&quot;utf-8&quot;</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">&quot;/editor/kindeditor.js&quot;</span><span class="pun">&gt;<!--</span--><span class="tag">script</span><span class="pun">&gt;</span><span class="pln"><br /></span><span class="pun">&lt;</span><span class="tag">script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">&quot;text/javascript&quot;</span><span class="pun">&gt;</span><span class="pln"><br />&nbsp; &nbsp; KE</span><span class="pun">.</span><span class="pln">show</span><span class="pun">({</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; id </span><span class="pun">:</span><span class="pln"> </span><span class="str">'content_1'</span><span class="pln"> </span><span class="com">//ID OF TEXTAREA</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br /></span><span class="pun"><!--</span--><span class="tag">script</span><span class="pun">&gt;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></span></span></pre>
+    Including id, you may set some extra attributes to customize editor. See<a href="http://www.kindeditor.com/index.php/Docs_7_editor-attributes-for-customization">editor attributes</a> for more.</li>
+</ol>
+</div>
+</div></p>
+    </dl>
+   </div>
+  </div>
+  <div class="footer">
+     <div class="copyright"> 
+       <span class="r">Copyright &copy; 2005-2009 Kindsoft LLC, All Rights Reserved.
+     </div>
+  </div>
+
+</div>
+</body>
+</html>

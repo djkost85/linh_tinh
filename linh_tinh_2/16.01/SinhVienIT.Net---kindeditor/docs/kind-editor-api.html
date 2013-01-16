@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<TITLE>Kind Editor APIKind Editor API - Kind Editor-Web WYSIWYG Online Editor</TITLE>
+<link href="prettify.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="box">
+  <div class="right">
+     <h2>Kind Editor Documentation</h2>
+     <ul>
+       <li>
+         <a href="add-editor-to-your-web-page.html">Add Editor To Your Web Page</a>
+         </li><li>
+         <a href="editor-attributes-for-customization.html">Editor Attributes For Customization</a>
+         </li><li>
+         <a href="faq.html">FAQ</a>
+         </li><li>
+         <a href="kind-editor-api.html">Kind Editor API</a>
+         </li><li>
+         <a href="write-web-editor-plugin.html">Write Web Editor Plugin</a>
+         </li>     </ul>
+  </div>
+  <div><h1 class="standalone">Kind Editor API</h1></div>
+  <div class="main">
+   <div class="left">
+    <dl>
+     <p><div class="margin-20">
+<div class="myblock">
+<div class="header">Variables</div>
+<ol>
+    <li><strong>KE</strong><br />
+    Global variable/namespace.<br />
+    Type:Object</li>
+    <li><strong>KE.version</strong><br />
+    Editor version.<br />
+    Type:String</li>
+    <li><strong>KE.lang</strong><br />
+    Language information.<br />
+    Type Object</li>
+    <li><strong>KE.scriptPath</strong><br />
+    Path of kindeditor.js.<br />
+    Type:String</li>
+    <li><strong>KE.browser</strong><br />
+    Browser type/version information. KE.browser.VERSION, KE.browser.IE, KE.browser.WEBKIT, KE.browser.GECKO, KE.browser.OPERA <br />
+    Type:Object</li>
+    <li><strong>KE.setting</strong><br />
+    Editor configuration information.<br />
+    Type:Object</li>
+    <li><strong>KE.g</strong><br />
+    Colloction of editor variables, including all attributes defined <a href="http://www.kindeditor.com/index.php/Docs_7_editor-attributes-for-customization">here</a> , as well as the following variables. These variables can be access by KE.g[id].<br />
+    For example:KE.g[&quot;content_1&quot;].iframeDoc is editor(with id &quot;content_1&quot;) iframe document object.<br />
+    Type:Object<br />
+    Member Variables:
+    <ul style="margin-top: 0pt">
+        <li>container: Editor parent element.</li>
+        <li>iframe: Editor iframe object.</li>
+        <li>iframeWin: Window object of editor iframe.</li>
+        <li>iframeDoc: Document object of editor iframe.</li>
+        <li>keSel: Current KE.selection object.</li>
+        <li>keRange: Current KE.range object.</li>
+        <li>sel: Current browser selection object.</li>
+        <li>range: Current browser range object.</li>
+        <li>hideDiv: Parent div object of popup dialog.</li>
+        <li>yesButton: [Yes] button of popup dialog.</li>
+        <li>noButton: [No] button of pouup dialog.</li>
+        <li>previewButton: [Preview] button of pouup dialog.</li>
+        <li>maskDiv: Gray mask(div) for popup dialog.</li>
+        <li>undoStack: Undo records.</li>
+        <li>redoStack: Redo records.</li>
+    </ul>
+    </li>
+    <li><strong>KE.plugin</strong><br />
+    Plugins loaded.<br />
+    Type:Object</li>
+</ol>
+</div>
+</div>
+<div class="margin-20">
+<div class="myblock">
+<div class="header">Functions</div>
+<ol>
+    <li><strong>KE.$(id, doc)</strong><br />
+    To get element by id. Equal to doc.getElementById.<br />
+    Parameters<br />
+    id:String. Id of element. <br />
+    doc:Object, document object where element is at. Optional, document by default<br />
+    return:<br />
+    Object,element object</li>
+    <li><strong>KE.$$(name, doc)</strong><br />
+    Create element object, Equal to doc.createElement.<br />
+    Parameters<br />
+    name:String,element tag name<br />
+    doc:Object,document object where element is at. Optional, document by default.<br />
+    return:<br />
+    Object,element object</li>
+    <li><strong>KE.event.add(el, event, listener)</strong><br />
+    Add event listener to an element.<br />
+    Parameters<br />
+    el:Object, listener to be added to.<br />
+    event:String, event type, for example, &quot;click&quot;,&quot;change&quot;,&quot;mousedown&quot;.<br />
+    listener:Function, event handler.<br />
+    return:none</li>
+    <li><strong>KE.event.remove(el, event, listener)</strong><br />
+    Remove event listener from an element.<br />
+    Parameters<br />
+    el:Object, listener to be removed from. <br />
+    event:String,event type, for example, &quot;click&quot;,&quot;change&quot;,&quot;mousedown&quot;.<br />
+    listener:Function, event handler.<br />
+    return:none</li>
+    <li><strong>KE.event.input(el, func)</strong><br />
+    Add listener for end user inputting.<br />
+    Parameters<br />
+    el:Object, listener to be added to.<br />
+    func:Function, event handler for user inputting.<br />
+    return:none</li>
+    <li><strong>KE.event.ctrl(el, key, func)</strong><br />
+    Add event listener for Ctrl+[?] event.<br />
+    Parameters<br />
+    el:Object,listener to be added to.<br />
+    key:String, alpha from A to Z.<br />
+    func:Function,event handler.<br />
+    return:none</li>
+    <li><strong>KE.event.ready(func)</strong><br />
+    Add event listener for DOMContentLoaded of document or equivalence.<br />
+    Parameters<br />
+    func:Function, event handler.<br />
+    return:none</li>
+    <li><strong>KE.each(obj, func)</strong><br />
+    Go through all the members of an object, and apply func to these memebers.<br />
+    Parameters<br />
+    obj:Object, object to go through<br />
+    func:Function, function applied to members. Parameters are key/value.<br />
+    return:none</li>
+    <li><strong>KE.eachNode(node, func)</strong><br />
+    Go through all the children of a node.<br />
+    Parameters<br />
+    node:Object, parent node to go through<br />
+    func:Function, function applied to children. Paramter is node(children node)<br />
+    return:none</li>
+    <li><strong>KE.format.getHtml(html, htmlTags)</strong><br />
+    Convert HTML to XHTML. When htmlTags is specified, those not defined in htmlTags will be ignored.<br />
+    Parameters<br />
+    html:String. HTML to be convert.<br />
+    htmlTags:Object. Filter criteria, optional.<br />
+    return:<br />
+    String,XHTML string.</li>
+    <li><strong>KE.util.getDocumentElement()</strong><br />
+    Get document element object.<br />
+    Parameters:none<br />
+    return:<br />
+    Object,element object</li>
+    <li><strong>KE.util.getDocumentWidth()</strong><br />
+    Get width of current page.<br />
+    Parameters:none<br />
+    return:<br />
+    Int,document width, in pixel.</li>
+    <li><strong>KE.util.getDocumentHeight()</strong><br />
+    Get height of current page.<br />
+    Parameters:none<br />
+    return:<br />
+    Int,document height.</li>
+    <li><strong>KE.util.loadStyle(path)</strong><br />
+    Load a css file into current page.<br />
+    Parameters<br />
+    path:String. URL of css.<br />
+    return:none</li>
+    <li><strong>KE.util.inArray(str, arr)</strong><br />
+    Determine if string exists in an array.<br />
+    Parameters<br />
+    str:String<br />
+    arr:Array<br />
+    return:<br />
+    Boolean, true for existing.</li>
+    <li><strong>KE.util.trim(str)</strong><br />
+    This function returns a string with whitespace stripped from the beginning and end of str.<br />
+    Parameters<br />
+    str:String<br />
+    return:String</li>
+    <li><strong>KE.util.getJsKey(key)</strong><br />
+    Convert css attributes in CSS to JavaScript class member name. For example, KE.util.getJsKey(&quot;font-size&quot;) will return &quot;fontSize&quot;.<br />
+    Parameters<br />
+    key:String<br />
+    return:String</li>
+    <li><strong>KE.util.escape(html)</strong><br />
+    Escape special character in HTML string.<br />
+    Parameters<br />
+    html:String,HTML string.<br />
+    return:String</li>
+    <li><strong>KE.util.getElementPos(el)</strong><br />
+    Get cordinate of an element.<br />
+    Parameters<br />
+    el:Object,element object<br />
+    return:Object</li>
+    <li><strong>KE.util.getCoords(ev)</strong><br />
+    Get cursor coordination.<br />
+    Parameters<br />
+    ev:Object, event object<br />
+    return:Object</li>
+    <li><strong>KE.util.setOpacity(el, opacity)</strong><br />
+    Set element opacity.<br />
+    Parameters<br />
+    el:Object,element<br />
+    opacity:Int. Opacity index, range from 0 ot 100.<br />
+    return:none</li>
+    <li><strong>KE.util.getIframeDoc(iframe)</strong><br />
+    Get iframe document object.<br />
+    Parameters<br />
+    iframe:Object,iframe <br />
+    return:Object</li>
+    <li><strong>KE.util.rgbToHex(str)</strong><br />
+    Convert RGB color formate to Hex formate.<br />
+    Parameters<br />
+    str:String,RGB color.<br />
+    return:String</li>
+    <li><strong>KE.util.createRange(doc)</strong><br />
+    Create range for doc.<br />
+    Parameters<br />
+    doc:Object,document object<br />
+    return:Object,range object</li>
+    <li><strong>KE.util.getFullHtml(id, tagLineMode)</strong><br />
+    Get initial html text from editor's iframe.<br />
+    Parameters<br />
+    id:String. Editor id.<br />
+    tagLineMode:Boolean,true for displaying tag's outline.<br />
+    return:String</li>
+    <li><strong>KE.util.getData(id)</strong><br />
+    Get HTML from editor.<br />
+    Parameters<br />
+    id:String. Editor id.<br />
+    return:String</li>
+    <li><strong>KE.util.getSrcData(id)</strong><br />
+    Get raw HTML from editor. That equals to innerHTML of editor's iframe.<br />
+    Parameters<br />
+    id:String. Editor id.<br />
+    return:String</li>
+    <li><strong>KE.util.getPureData(id)</strong><br />
+    Get text from editor without html tag.<br />
+    Parameters<br />
+    id:String. Editor id.<br />
+    return:String</li>
+    <li><strong>KE.util.setData(id)</strong><br />
+    Fill TEXTAREA with html generated by editor.<br />
+    Parameters<br />
+    id:String. Editor id.<br />
+    return:none</li>
+    <li><strong>KE.util.focus(id)</strong><br />
+    Let editor get focus.<br />
+    Parameters<br />
+    id:String, editor id.<br />
+    return:none</li>
+    <li><strong>KE.util.selection(id)</strong><br />
+    Save current selection to KE.g[id].sel,KE.g[id].range,KE.g[id].keSel,KE.g[id].keRange.<br />
+    Parameters<br />
+    id:String,ID of editor.<br />
+    return:none</li>
+    <li><strong>KE.util.select(id)</strong><br />
+    Select an range, for IE only. <br />
+    Parameters<br />
+    id:String, editor id.<br />
+    return:none</li>
+    <li><strong>KE.util.execCommand(id, cmd, value)</strong><br />
+    Execute browser command. See API of document.execCommand for different browser.<br />
+    Parameters<br />
+    id:String, id of editor.<br />
+    cmd:String, same as execCommand of browser.<br />
+    value:String, same as execCommand of browser.<br />
+    return:none</li>
+    <li><strong>KE.util.insertHtml(id, html)</strong><br />
+    Insert HTML to current cursor.<br />
+    Parameters<br />
+    id:String. Id of editor<br />
+    html:String. HTML to be inserted.<br />
+    return:none<br />
+    <span style="color: red">KE.util.selection(id) must be called before this function is called, because KE.g[id].sel and KE.g[id].range need to be set.</span></li>
+    <li><strong>KE.create(id, mode)</strong><br />
+    Create an editor.<br />
+    Parameters<br />
+    id:String. Id of editor.<br />
+    mode:Int. Optional. 1 for creating editor at the end of body section. 0 or default for creating editor in front of TEXTAREA.<br />
+    return:none</li>
+    <li><strong>KE.remove(id, mode)</strong><br />
+    Remove editor.<br />
+    Parameters<br />
+    id:String. Editor id.<br />
+    mode:Int. Optional. 1 for removing editor at the end of body section. 0 or default for removing editor in front of TEXTAREA.<br />
+    return:none</li>
+    <li><strong>KE.init(config)</strong><br />
+    Set configuration for initialization.<br />
+    Parameters<br />
+    config:Object. Editor attributes. See <a href="http://www.kindeditor.com/index.php/Docs_7_editor-attributes-for-customization">attributes</a> for more.<br />
+    return:none</li>
+    <li><strong>KE.show(config)</strong><br />
+    Create and show editor up. This function will call KE.init first. When dom is loaded, KE.create will be call to show editor.<br />
+    Parameters<br />
+    config:Object. Editor attributes. See <a href="http://www.kindeditor.com/index.php/Docs_7_editor-attributes-for-customization">attributes</a> for more.<br />
+    return:none</li>
+</ol>
+</div>
+</div>
+<div class="margin-20">
+<div class="myblock">
+<div class="header">Classes</div>
+<ol>
+    <li><strong>KE.selection(win, doc)</strong><br />
+    KindEditor selection class for get/set current range.<br />
+    Parameters<br />
+    win:Object,window object<br />
+    doc:Object,document object<br />
+    Member properties:
+    <ul style="margin-top: 0pt">
+        <li>sel:Object. Browser selection object of current selection.</li>
+        <li>range:Object. Browser range object of current selection.</li>
+        <li>keRange:Object. KindEditor range object of current selection. See KE.range for more.</li>
+    </ul>
+    Member method:
+    <ul style="margin-top: 0pt">
+        <li>addRange(keRange): Set current selection.</li>
+        <li>focus(): Reselect. IE supported only.</li>
+    </ul>
+    </li>
+    <li><strong>KE.range(doc)</strong><br />
+    Universal range class for different types of browsers.<br />
+    Parameters<br />
+    doc:Object,document object<br />
+    Member properties:
+    <ul style="margin-top: 0pt">
+        <li>startNode:Object. Start node.</li>
+        <li>startPos:Int. Position of start node.</li>
+        <li>endNode:Object. End node.</li>
+        <li>endPos:Int. Position of end node.</li>
+    </ul>
+    Member method:
+    <ul style="margin-top: 0pt">
+        <li>getParentElement(): Get direct paren node that holds range.</li>
+        <li>getNodeList(): Get node list within range.</li>
+        <li>comparePoints(how, range): Compare with opsition of another range. Parameter how could be &quot;START_TO_START&quot;, &quot;START_TO_END&quot;, &quot;END_TO_START&quot;,&quot;END_TO_END&quot;.</li>
+        <li>setStart(node, pos): Set start point of range.</li>
+        <li>setEnd(node, pos):Set end point of range.</li>
+        <li>selectNode(node):Set one node as range's start point and end point.</li>
+        <li>extractContents():Extract content form range.</li>
+        <li>cloneContents():Copy content of range.</li>
+        <li>getText():Get text from range.</li>
+    </ul>
+    </li>
+    <li><strong>KE.cmd(id)</strong><br />
+    KindEditor command class.<br />
+    Parameters<br />
+    id:String. Editor id.<br />
+    Member properties:
+    <ul style="margin-top: 0pt">
+        <li>doc:Object. Document of editor iframe.</li>
+        <li>keSel:Int. Kind editor selection object</li>
+        <li>keRange:Object. KindEditor range object of current selection</li>
+    </ul>
+    Member method:
+    <ul style="margin-top: 0pt">
+        <li>wrap(tagName, attributes): Wrap current selection with given tagName. Inline tag supported only. Parameter tagName is tag name. Parameter attributes is a attribute array for tagName.</li>
+        <li>remove(tags): Remove tags from current selection.</li>
+    </ul>
+    </li>
+</ol>
+</div>
+</div></p>
+    </dl>
+   </div>
+  </div>
+  <div class="footer">
+     <div class="copyright"> 
+       <span class="r">Copyright &copy; 2005-2009 Kindsoft LLC, All Rights Reserved.
+     </div>
+  </div>
+
+</div>
+</body>
+</html>

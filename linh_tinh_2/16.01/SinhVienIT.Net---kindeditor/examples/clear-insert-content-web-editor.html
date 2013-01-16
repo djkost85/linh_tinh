@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>KindEditor</title>
+    <style type="text/css" rel="stylesheet">
+      .editor {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      }
+    </style>
+    <script type="text/javascript" charset="utf-8" src="./../kindeditor.js"></script>
+    <script type="text/javascript">
+      KE.show({
+          id : 'content1',
+          cssPath : './index.css'
+      });
+      function clearEditor(id) {
+          KE.g[id].iframeDoc.open();
+          KE.g[id].iframeDoc.write(KE.util.getFullHtml(id));
+          KE.g[id].iframeDoc.close();
+          KE.g[id].newTextarea.value = '';
+      }
+      function insertHtml(id, html) {
+          KE.util.focus(id);
+          KE.util.selection(id);
+          KE.util.insertHtml(id, html);
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Clear/Insert Content</h3>
+    <div class="editor">
+      <textarea id="content1" name="content" style="width:700px;height:400px;visibility:hidden;">
+<p>
+<img border="0" alt="" align="left" src="http://kindsoft.net/images/logo_180_30.gif" />
+Kind editor is a powerful yet easy to use, online web-base html editor, which allows users to edit web page in WYSIWYG way. It is compatible with IE, Firefox, Chrome, Safari, Opera and other popular browsers over different platforms.<br />
+Written in Javascript, Kind editor could be integrated with any backend technology, such as Java, .NET, PHP, ASP and RoR.
+Kind editor has been widely used in different CMS(Content Management System), shopping, forum, blog, wiki, email and other web based applications.  
+With excellent user experience, it is becoming one of the most poplular editors.
+</p>
+      </textarea>
+    </div>
+    <input type="button" name="button" value="Clear Up" onclick="javascript:clearEditor('content1');" />
+    <input type="button" name="button" value="Insert Samples" onclick="javascript:insertHtml('content1', '<strong>test stuff</strong>');" />
+  </body>
+</html>
