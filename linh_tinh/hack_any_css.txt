@@ -1,0 +1,30 @@
+-----------hack for firefox--------------------
+
+@-moz-document url-prefix() { 
+  .selector {
+     color:lime;
+  }
+}
+
+----------------hack for ie8--------------
+
+.selector {
+     color:lime\0/;
+  }
+
+hoac In HTML:
+
+<!--[if IE 8]>
+    <style type="text/css">
+        //IE8-specific CSS here.
+    </style>
+<![endif]-->
+
+
+
+
+
+------------------hack for ie9---------------
+.selector {
+     color:lime\9;
+  }

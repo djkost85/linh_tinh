@@ -1,0 +1,175 @@
+Rapidleech PlugMod (by eqbal)
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+rev. 29 - 10/1/2008
++Upload-Plugin > www.filesend.net(Premium).
++Download Plugin(by doum-ti-di-li-doom) > uploads.bizhat.com
++fixed(by doum-ti-di-li-doom) > ziddu.com, ADrive.com.
+
+rev. 28 - 9/6/2008
++Upload-Plugin > Gigasize.com(Premium and Free Account).
++Download-Plugin (by doum-ti-di-li-doom) > Sharebase.to, Megashare.com[Free&Premium], Sharedzilla.com, Depositfiles.com, Ziddu.com,  Uploaded.to .
++http.php fixed.
+---Update 1:
+	+Gigasize.com upload-plugin fixed.
+---Update 2:
+	+Updated > http.php/other.php/upload.php
+---Update 3:	
+	+Letitbit.net fixed. (by doum-ti-di-li-doom)
+	+Rapidshare.com updated.
+	+LinkChecker fixed.
+---Update 4:
+	+ Security update.
+
+
+
+rev. 27 - 8/25/2008
++UploadLinks format changed from plain-text to html.
++$download_dir_is_changeable fixed. (default: false)
+---Update 1:
+	+Some minor fixes.
+---Update 2:
+	+Some other fixes.
+
+rev. 26 - 8/22/2008
++Upload-Section added.
++Upload-Plugin > yousendit.com, badongo.com(free-account)
++Config.php > Disable All Actions.
++Some other fixes.
+---Update 1:
+	+PHPRAPIDGET Upload-Plugins Added.
+---Update 2:
+	+Mediafire.com fixed.
+
+rev. 25 - 8/18/2008
++Mediafire.com added.
++Sharebase.de added.
++Youtube.com MP4 fixed.
++ADrive.com fixed.
+
+rev. 24 - 8/17/2008
++Netload.in premium added.(netload_in.php updated)
++config.php updated. ($premium_acc["netload"])
+
+rev. 23 - 8/9/2008
++Filego.net added.
++Zippyshare.com added.
++Youtube.com fixed.
++Some other fixes.
+
+rev. 22 - 7/29/2008
++Link Checker added. (coded by dman biatches)
++Megaupload.com premium fixed.
++Sendspace.com fixed.
+--Update 1
+	-main.php fixed.
+
+rev. 21 - 7/10/2008
++Security update:
+	_Config.php -> check forbidden-filetypes before unzipping.
++Adrive.com updated.
+
+rev. 20 - 7/3/2008
++Fixed:
+    _Rapidshare.com
+	_Filefactory.com
+	_Netload.in
+
+rev. 19 - 6/27/2008
++Rapidshare.com updated.
++http.php updated.
++Basic Authentication for audl.php.
++Big-File Split Problem Fixed. (by Kingstone)
+
+
+rev. 18 - 6/16/2008
++MD5 hash added.
++config.php > Bandwidth saving.
++Rapidshare.com updated.
+
+rev. 17 - 6/9/2008
++2shared.com added.
++savefile.com added.
++4shared.com fixed.
++index.php fixed and now you can use any port in the Direct-URL. (like this: http://220.239.128.62:443/SONGS/SINHALA/ABEY%20-%20NIRANJALA/009%20-%20Diyapita%20Anda.mp3)
++config.php > Auto-Download Premium Accounts.
+
+rev. 16 - 6/4/2008
++Rapidshare.com fixed.
+
+--Update 5
++mirror-server-list fixed.
+--Update 4
++Rapidshare Download-button fixed.
+--Update 3
++Megaupload.com premium updated. (now support both direct and indirect mode)
++Some minor bugs fixed.
+--Update 2
++Waiting-time fixed.
+--Update 1
++RS Happy Hour fixed.
+
+rev. 15 - 6/2/2008
++Imageshack.us torrent plugin updated. (Use only final-direct-download-link, NOT http://img~.imageshack.us/tor/browse/?id=~)
++4shared.com updated.
++List style changed.
++Unzip files - beta.(zip archive will be extracted to your DOWNLOAD directory - '$download_dir' > default: 'files/')
+
+rev. 14 - 6/1/2008
++PluginOptions > Megaupload.com Cookie Value (like: b658b369856766f621ca292fac113a5c, that contains un&pass of premium account and can be shared with others, because it's an encrypted value).
++Megaupload.com plugin updated.
++You can set Imageshack-account and Megaupload-cookie in config.php.
++filefactory.com fixed.
++MassRename.(batch file extension rename)
++Server Info. (space, cpu-load, time - you can disable it, see config.php)
+
+rev. 13 - 5/30/2008
++PluginOptions > Disable All Plugins.
+
+rev. 12 - 5/30/2008
++Imageshack torrent plugin added.
+
+rev. 11 - 5/27/2008
++www.files.to added.
++www.fileflyer.com added.
++easy-share.com updated.
+
+rev. 10 - 5/23/2008
++Security update.
+
+rev. 9 - 5/21/2008
++Youtube.com updated.
++Options.php fixed.
++netload.in fixed.
+
+rev. 8 - 5/19/2008
++easy-share.com added.
++netload.in added.
+
+rev. 7 - 5/18/2008
++Megashares plugin updated.
++disable_deleting option fixed.
++Error style changed.
++RapidgetPro Auto-Download added.
+
+rev. 6 - 5/14/2008
++Megashares.com added.
++cURL module is not needed anymore for Rapidshare.com plugin.
++New option: disable file deletion. (config.php)
+
+rev. 5 - 5/9/2008
++Speedyshare.com fixed.
++array_walk error fixed.
+
+rev. 4 - 5/9/2008
++Youtube fixed.
++PluginOptions > youtube HQ video.
+
+rev. 3 - 5/8/2008
++RSCaptcha-image directory changed.
+
+rev. 2 :
++Logo fixed.
+
+rev. 1 :
++www.gigasize.com added.

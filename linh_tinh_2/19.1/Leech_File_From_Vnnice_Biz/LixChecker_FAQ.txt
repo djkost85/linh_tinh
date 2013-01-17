@@ -1,0 +1,16 @@
+FAQs:
+
+What is debug mode ?
+After recieving numerous cURL and PHP related problems, we decided to add the debug mode. This mode is still in development but at the moment it will tell u
+1) If cURL is enabled or not
+2) What is your PHP Version (5+ is recommended but not obligatory)
+3) It will display your php info
+
+How to access debug mode ?
+You will need to change $debug = 0; to $debug = 1;
+Then you need to enter ?debug at the end of your Linkchecker URL and click on check links. At the end change debug=1 to anything else or anyone will be able to access your php info.
+Example URL (for example if your link checker is situated at http://www.yourdomain.com/lc/lc.php) then you run:
+http://www.yourdomain.com/lc/lc.php?debug
+
+What if i dont have cURL installed?
+You can change $fgc = 0 to $fgc = 1 which will enable function file_get_contents and disable cURL. Alternatively you can install cURL at http://php.net/cURL
