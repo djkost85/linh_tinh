@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+		<title>
+			<![CDATA[<title>Info description title</title>]]> 
+		</title>
+		<descriere>
+			<![CDATA[<body>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis iaculis sodales. Aenean a sapien metus. Maecenas ullamcorper porttitor euismod. Nulla quis arcu erat, eu congue risus. Pellentesque nulla lectus, fermentum vel sodales a, volutpat at nunc.
+	Integer quis metus metus. Mauris porttitor augue vel lectus accumsan lobortis. Praesent diam urna, gravida nec semper at, mattis porttitor justo.</body>]]>
+		</descriere>
+		<image value="assets/info1.jpg"/>
+</info>

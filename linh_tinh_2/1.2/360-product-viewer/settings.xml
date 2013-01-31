@@ -1,0 +1,40 @@
+﻿<settings>
+  <General_Properties>
+    <componentWidth value="600"/>
+    <componentHeight value="400"/>
+    <backgroundColor value="0x333333"/>
+    <backgroundAlpha value="1"/>
+    <maxZoom value="1"/>
+    <offsetX value="0"/>
+    <offsetY value="0"/>
+    <pictureWidth value="300"/>
+    <pictureHeight value="404"/>
+    <rotation_speed value="100"/>
+    <auto_play value="false"/>
+    <assets value="images.xml"/>
+    <controlSkin value="assets/skins/skin.xml"/>
+    <preloader value="assets/preloaders/redsquares.swf"/>
+    <showAbout value="true"/>
+  </General_Properties>
+  <Reflection_Properties>
+    <use_reflection value="false"/>
+    <distance value="10"/>
+    <ralpha value="0.6"/>
+    <ratio value="44"/>
+  </Reflection_Properties>
+  <Blur_Properties>
+    <useBlur value="true"/>
+    <blurIntensity value="2"/>
+  </Blur_Properties>
+  <Info_Window_Properties>
+    <windowWidth value="500"/>
+    <windowHeight value="270"/>
+    <windowBgColor value="0xffffff"/>
+    <borderWidth value="0"/>
+    <borderColor value="0xff9900"/>
+    <picWidth value="200"/>
+    <picHeight value="130"/>
+    <picTextDistance value="30"/>
+    <style value="assets/css/style.css"/>
+  </Info_Window_Properties>
+</settings>

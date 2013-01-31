@@ -1,0 +1,124 @@
+<html><head>
+<title> Live Demo of Drag and Drop Widgets using JQuery - ShivaSoft ...the supreme solution </title>
+<link rel="stylesheet" href="empty.css" type="text/css" media="all">
+<script type="text/javascript" src="http://localhost/js/jquery-1.8.3.js"></script> 
+<script type="text/javascript" src="http://localhost/js/jquery-ui-1.10.0.custom.min.js"></script> 
+
+<meta name="description" content="Live Demo of creating Drag and Drop Widget using JQuery ">
+<meta name="keywords" content="JQuery, Widget, Drag and Drop ">
+
+</head>
+<body style="cursor: auto; ">
+
+
+	<div class="column ui-sortable" id="column1" unselectable="on">
+		<div class="dragbox" id="item1" style="opacity: 1; z-index: 0; ">
+			<h2>Handle 1
+			  <a href="#" class="delete opIcons"> </a> 
+			  <a href="#" class="maxmin opIcons"> </a> 
+			</h2>
+			<div class="dragbox-content">
+				<p>This is dummy content under div with long text, 
+				lets see the format and width of the div tag</p>
+				
+				<p>This is dummy content under div with long text, 
+				lets see the format and width of the div tag</p>
+
+				<p>This is dummy content under div with long text, 
+				lets see the format and width of the div tag</p>
+
+				<p>This is dummy content under div with long text, 
+				lets see the format and width of the div tag</p>
+
+
+			</div>
+		</div>
+		<div class="dragbox" id="item5" style="opacity: 1; z-index: 0; ">
+			<h2>
+			  Handle 5
+			  <a href="#" class="delete opIcons"> </a> 
+			  <a href="#" class="maxmin opIcons"> </a> 
+			  
+			</h2>
+			<div class="dragbox-content">
+				<!--Panel Content Here-->
+			</div>
+		</div><div class="dragbox" id="item3" style="opacity: 1; z-index: 0; ">
+			<h2>Handle 3
+			  <a href="#" class="delete opIcons"> </a> 
+			  <a href="#" class="maxmin opIcons"> </a> 
+			</h2>
+			<div class="dragbox-content">
+				<!-- Panel Content Here -->
+			</div>
+		</div><div class="dragbox" id="item2">
+			<h2>Handle 2
+			  <a href="#" class="delete opIcons"> </a> 
+			  <a href="#" class="maxmin opIcons"> </a> 
+			
+			</h2>
+			<div class="dragbox-content">
+				<!-- Panel Content Here -->
+			</div>
+		</div>
+		
+	</div>
+	<div class="column ui-sortable" id="column2" unselectable="on">
+		<div class="dragbox" id="item4">
+			<h2>
+				Handle 4
+			  <a href="#" class="delete opIcons"> </a> 
+			  <a href="#" class="maxmin opIcons"> </a> 
+			</h2>
+			<div class="dragbox-content">
+				<!-- Panel Content Here-->
+			</div>
+		</div>
+		
+	</div>
+<script type="text/javascript">
+$( 
+	function(){
+		$('a.maxmin').click(
+		function(){
+			$(this).parent().siblings('.dragbox-content').toggle();
+		});
+
+		$('a.delete').click(
+		function(){
+			var sel = confirm('do you want to delete the widget?');
+			if(sel)
+			{
+				//del code here
+			}
+		}
+		);
+
+		$('.column').sortable({
+		connectWith: '.column',
+		handle: 'h2',
+		cursor: 'move',
+		placeholder: 'placeholder',
+		forcePlaceholderSize: true,
+		opacity: 0.4,	
+		stop: function(event, ui)
+			{
+				$(ui.item).find('h2').click();
+				var sortorder='';
+
+				$('.column').each(function(){
+					var itemorder=$(this).sortable('toArray');
+					var columnId=$(this).attr('id');
+					sortorder+=columnId+'='+itemorder.toString()+'&';
+				});
+				sortorder = sortorder.substring(0, sortorder.length - 1)
+				alert('SortOrder: '+sortorder);
+
+			}
+		}).disableSelection();
+	});
+
+</script>
+
+
+</body></html>

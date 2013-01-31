@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<images>
+	<photo image = "images/160.jpg" pointX = "273" pointY = "67" info = "assets/infoimg1.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/159.jpg" pointX = "272" pointY = "67" info = "assets/infoimg1.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/158.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/157.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/156.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/155.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/154.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/153.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/152.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/151.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/150.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/149.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/148.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/147.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/146.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/145.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/144.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/143.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/142.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/141.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/140.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/139.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/138.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/137.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/136.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/135.jpg" ></photo>
+	<photo image = "images/134.jpg" ></photo>
+	<photo image = "images/133.jpg" pointX = "315" pointY = "500" info = "assets/infoimg2.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/132.jpg" pointX = "305" pointY = "500" info = "assets/infoimg2.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/131.jpg" pointX = "300" pointY = "500" info = "assets/infoimg2.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/130.jpg" pointX = "290" pointY = "500" info = "assets/infoimg2.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/129.jpg" pointX = "280" pointY = "501" info = "assets/infoimg2.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/128.jpg" ></photo>
+	<photo image = "images/127.jpg" ></photo>
+	<photo image = "images/126.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/125.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/124.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/123.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/122.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/121.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/120.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/119.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/118.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/117.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/116.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/115.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/114.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/113.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/112.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/111.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/110.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/109.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/108.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/107.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/106.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/105.jpg" pointX = "" pointY = "" info = ""></photo>
+	<photo image = "images/104.jpg" pointX = "277" pointY = "68" info = "assets/infoimg1.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/103.jpg" pointX = "276" pointY = "68" info = "assets/infoimg1.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/102.jpg" pointX = "275" pointY = "68" info = "assets/infoimg1.xml" hpimage ="assets/info.png"></photo>
+	<photo image = "images/101.jpg" pointX = "274" pointY = "67" info = "assets/infoimg1.xml" hpimage ="assets/info.png"></photo>
+</images>

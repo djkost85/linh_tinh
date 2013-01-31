@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<groups>
+		<group snapToCell="true" gridPosition="CR" cellPosition="CR" orientation="horizontal" paddingV="0" paddingH="0">
+			<backgroundButton backColor="0xdddddd" backAlpha="1" cornerRadius="10" width="97" height="78"/>
+		</group>
+		<group snapToCell="true" gridPosition="CR" cellPosition="CR" orientation="vertical" spacing="3" paddingH="-11" paddingV="-6">
+			<button out="assets/skins/skin3/left_face.png" over="assets/skins/skin3/left_face_over.png" down="assets/skins/skin3/left_face_over.png" action="left_face" tooltip="" />
+			<button out="assets/skins/skin3/right_face.png" over="assets/skins/skin3/right_face_over.png" down="assets/skins/skin3/right_face_over.png" action="right_face" tooltip="" />
+			<button out="assets/skins/skin3/front_face.png" over="assets/skins/skin3/front_face_over.png" down="assets/skins/skin3/front_face_over.png" action="front_face" tooltip="" />
+			<button out="assets/skins/skin3/back_face.png" over="assets/skins/skin3/back_face_over.png" down="assets/skins/skin3/back_face_over.png" action="back_face" tooltip="" />	
+		</group>
+		<group snapToCell="true" gridPosition="CR" cellPosition="CR" orientation="horizontal" spacing="1" paddingH="-40" paddingV="-4">
+			<holdButton out="assets/skins/skin3/left.png" over="assets/skins/skin3/leftOver.png" down="assets/skins/skin3/leftOver.png" action="left" tooltip="" />
+			<doubleButton>
+				<button out="assets/skins/skin3/play.png" over="assets/skins/skin3/playOver.png" down="assets/skins/skin3/playOver.png" action="play" tooltip="" />
+				<button out="assets/skins/skin3/pause.png" over="assets/skins/skin3/pauseOver.png" down="assets/skins/skin3/pauseOver.png" action="pause" tooltip="" />
+			</doubleButton>
+			<holdButton out="assets/skins/skin3/right.png" over="assets/skins/skin3/rightOver.png" down="assets/skins/skin3/rightOver.png" action="right" tooltip="" />
+			
+		</group>
+		<group snapToCell="true" gridPosition="CR" cellPosition="CR" orientation="vertical" spacing="24" paddingH="-56" paddingV="-5">
+		    <holdButton out="assets/skins/skin3/zoomIn.png"  over="assets/skins/skin3/zoomInOver.png" down="assets/skins/skin3/zoomInOver.png" action="zoomIn" tooltip=""/>
+			<holdButton out="assets/skins/skin3/zoomOut.png" over="assets/skins/skin3/zoomOutOver.png" down="assets/skins/skin3/zoomOutOver.png" action="zoomOut" tooltip="" />
+		</group>	
+		<group snapToCell="true" gridPosition="CR" cellPosition="CR" orientation="horizontal" spacing="0" paddingV="26" paddingH="-10">
+			<scrubBar back="assets/skins/skin3/scrubBack.png"  position="assets/skins/skin3/position.png" dif="1" width="77" orientation="horizontal" />							
+		</group>
+		
+	</groups>
+</data>
