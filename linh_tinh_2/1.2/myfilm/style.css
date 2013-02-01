@@ -1,0 +1,60 @@
+/*
+Theme Name: My Film
+Theme URI: 
+Description: Theme for project film
+Author: Zuongthao
+Version: 1.0
+*/
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	line-height:1.5em;
+	background:#C0C0C0;
+	margin:0;
+}
+.clear{
+	line-height:1px;
+	clear:both;
+	height:1px;
+	}
+
+a{
+	color:#8A0000;
+	text-decoration:none;
+	}
+.wraper{
+	width:1100px;
+	height:880px;
+	margin:0 auto;
+	background:#C0FF88;
+	}
+#left-widget-area{
+	width: 220px;
+	height: 700px;
+	background:#007777;
+	text-align: center;
+	float:left;
+}
+#about-image{
+	width: 150px;
+}
+#quang_cao_flash_top{
+	float:left;
+	width: 500px;
+}
+#right-sidebar{
+	float:right;
+	width: 220px;
+	height: 700px;
+	background:#007777;
+	text-align: center;
+	
+}
+
+.bai-viet{
+	width:150px;
+	margin: 10px 5px;
+	float:left;
+	
+}
