@@ -1,0 +1,766 @@
+<html><head><style type="text/css">
+#tudobox {
+	width:728px;
+	height:530px;
+	clear:left;
+	}
+.Pages { font-size: 12px; padding-top: 10px; padding-bottom:5px;margin-left: auto; margin-right: auto; /* padding-bottom: 10px;  background-image: url(http://l.yimg.com/www.flickr.com/images/dotted.gif); background-repeat: repeat-x; background-position: left bottom; */ }
+
+.Pages a, .pageList .this-page { padding: 2px 6px; border: solid 1px #83829D; background: #fff; text-decoration: none; }
+
+.Pages a:visited { padding: 2px 6px; border: solid 1px #83829D; background: #fff; text-decoration: none; }
+
+.Pages .AtStart { margin-right: 0px; padding: 2px 6px; /* border: solid 1px #ddd; */ background: #fff; color: #aaa; }
+
+.Pages .Prev { margin-right: 0px; padding: 2px 6px; border: solid 2px #ddd; background: #fff; }
+
+.Pages .break { padding: 2px 6px; border: none; background: #fff; text-decoration: none; }
+
+.Pages .Next { margin-left: 20px; padding: 2px 6px; border: solid 2px #ddd; background: #fff;}
+
+.Pages .AtEnd { margin-left: 20px; padding: 2px 6px; /* border: solid 1px #ddd; */ background: #fff; color: #aaa; }
+
+.Pages .this-page {padding: 2px 6px; border-color: #999; font-weight: bold; font-size: 13px; vertical-align: top; background: #fff; color: #FF0084; }
+
+.Pages a:hover {color: #fff; background: #0063DC; border-color: #036; text-decoration: none;}
+a {	color:#1C3D9E; 
+text-decoration:none;
+}
+
+a:hover {color: #FFCC00 font-size: 11px; font-weight:underlined;
+text-decoration: underline;
+}
+	#flashbox {
+	width:500px;
+	
+	background-color:#fff;
+	float:left;
+	
+	height:153px;
+background-image:url(logo.png);
+background-repeat:no-repeat;
+background-position:center;
+background-position:left;
+
+	
+	}
+	#navegacao5 {
+	width:218px;
+	vertical-align:top;
+	background-color:#fff;
+	float:right;
+	}
+	td, body, div {	font-family: "Trebuchet MS", Geneva, Arial, Helvetica, SunSans-Regular, Verdana, sans-serif; font-size:12px; }
+
+}
+
+
+</style>
+ <script language="JavaScript">
+     var jsReady = false;
+     function isReady() {
+         return jsReady;
+     }
+     function pageInit() {
+         jsReady = true;
+         document.forms["form1"].output.value += "\n" + "JavaScript is ready.\n";
+     }
+     function thisMovie(movieName) {
+         if (navigator.appName.indexOf("Microsoft") != -1) {
+             return window[movieName];
+         } else {
+             return document[movieName];
+         }
+     }
+     function sendToActionScript(value) {
+         thisMovie("ExternalInterfaceExample").sendToActionScript(value);
+		 
+     }
+	      function sendIcon(value) {
+		
+         thisMovie("ExternalInterfaceExample").sendIcon(value);
+		 
+     }
+     function sendToJavaScript(value) {
+         document.forms["form1"].output.value += "ActionScript says: " + value + "\n";
+     }
+ </script>
+     <script type="text/javascript">
+
+function LoadPage(page,usediv,id) {
+         // Set up request varible
+         try {xmlhttp = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");}  catch (e) { alert("Error: Could not load page.");}
+         //Show page is loading
+         document.getElementById(usediv).innerHTML = 'Loading...';
+         //scroll to top
+         scroll(0,0);
+         //send data
+         xmlhttp.onreadystatechange = function(){
+                 //Check page is completed and there were no problems.
+                 if ((xmlhttp.readyState == 4) && (xmlhttp.status == 200)) {
+                        //Write data returned to page
+                        document.getElementById(usediv).innerHTML = xmlhttp.responseText;
+                 }
+         }
+         xmlhttp.open("GET", page+id);
+         xmlhttp.send(null);
+         //Stop any link loading normaly
+         return false;
+}
+
+function LoadScrap(page,usediv) {
+         // Set up request varible
+         try {xmlhttp = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");}  catch (e) { alert("");}
+         //Show page is loading
+         document.getElementById(usediv).innerHTML = '<br>Carregando... Por favor, aguarde.<br><img src=uploading.gif>';
+         //scroll to top
+         scroll(0,0);
+         //send data
+         xmlhttp.onreadystatechange = function(){
+                 //Check page is completed and there were no problems.
+                 if ((xmlhttp.readyState == 4) && (xmlhttp.status == 200)) {
+                        //Write data returned to page
+                        document.getElementById(usediv).innerHTML = xmlhttp.responseText;
+                 }
+         }
+         xmlhttp.open("GET", page);
+         xmlhttp.send(null);
+         //Stop any link loading normaly
+         return false;
+}
+</script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+//v1.7
+// Flash Player Version Detection
+// Detect Client Browser type
+// Copyright 2005-2008 Adobe Systems Incorporated.  All rights reserved.
+var isIE  = (navigator.appVersion.indexOf("MSIE") != -1) ? true : false;
+var isWin = (navigator.appVersion.toLowerCase().indexOf("win") != -1) ? true : false;
+var isOpera = (navigator.userAgent.indexOf("Opera") != -1) ? true : false;
+function ControlVersion()
+{
+	var version;
+	var axo;
+	var e;
+	// NOTE : new ActiveXObject(strFoo) throws an exception if strFoo isn't in the registry
+	try {
+		// version will be set for 7.X or greater players
+		axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7");
+		version = axo.GetVariable("$version");
+	} catch (e) {
+	}
+	if (!version)
+	{
+		try {
+			// version will be set for 6.X players only
+			axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");
+			
+			// installed player is some revision of 6.0
+			// GetVariable("$version") crashes for versions 6.0.22 through 6.0.29,
+			// so we have to be careful. 
+			
+			// default to the first public version
+			version = "WIN 6,0,21,0";
+			// throws if AllowScripAccess does not exist (introduced in 6.0r47)		
+			axo.AllowScriptAccess = "always";
+			// safe to call for 6.0r47 or greater
+			version = axo.GetVariable("$version");
+		} catch (e) {
+		}
+	}
+	if (!version)
+	{
+		try {
+			// version will be set for 4.X or 5.X player
+			axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.3");
+			version = axo.GetVariable("$version");
+		} catch (e) {
+		}
+	}
+	if (!version)
+	{
+		try {
+			// version will be set for 3.X player
+			axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.3");
+			version = "WIN 3,0,18,0";
+		} catch (e) {
+		}
+	}
+	if (!version)
+	{
+		try {
+			// version will be set for 2.X player
+			axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+			version = "WIN 2,0,0,11";
+		} catch (e) {
+			version = -1;
+		}
+	}
+	
+	return version;
+}
+// JavaScript helper required to detect Flash Player PlugIn version information
+function GetSwfVer(){
+	// NS/Opera version >= 3 check for Flash plugin in plugin array
+	var flashVer = -1;
+	
+	if (navigator.plugins != null && navigator.plugins.length > 0) {
+		if (navigator.plugins["Shockwave Flash 2.0"] || navigator.plugins["Shockwave Flash"]) {
+			var swVer2 = navigator.plugins["Shockwave Flash 2.0"] ? " 2.0" : "";
+			var flashDescription = navigator.plugins["Shockwave Flash" + swVer2].description;
+			var descArray = flashDescription.split(" ");
+			var tempArrayMajor = descArray[2].split(".");			
+			var versionMajor = tempArrayMajor[0];
+			var versionMinor = tempArrayMajor[1];
+			var versionRevision = descArray[3];
+			if (versionRevision == "") {
+				versionRevision = descArray[4];
+			}
+			if (versionRevision[0] == "d") {
+				versionRevision = versionRevision.substring(1);
+			} else if (versionRevision[0] == "r") {
+				versionRevision = versionRevision.substring(1);
+				if (versionRevision.indexOf("d") > 0) {
+					versionRevision = versionRevision.substring(0, versionRevision.indexOf("d"));
+				}
+			}
+			var flashVer = versionMajor + "." + versionMinor + "." + versionRevision;
+		}
+	}
+	// MSN/WebTV 2.6 supports Flash 4
+	else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.6") != -1) flashVer = 4;
+	// WebTV 2.5 supports Flash 3
+	else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.5") != -1) flashVer = 3;
+	// older WebTV supports Flash 2
+	else if (navigator.userAgent.toLowerCase().indexOf("webtv") != -1) flashVer = 2;
+	else if ( isIE && isWin && !isOpera ) {
+		flashVer = ControlVersion();
+	}	
+	return flashVer;
+}
+// When called with reqMajorVer, reqMinorVer, reqRevision returns true if that version or greater is available
+function DetectFlashVer(reqMajorVer, reqMinorVer, reqRevision)
+{
+	versionStr = GetSwfVer();
+	if (versionStr == -1 ) {
+		return false;
+	} else if (versionStr != 0) {
+		if(isIE && isWin && !isOpera) {
+			// Given "WIN 2,0,0,11"
+			tempArray         = versionStr.split(" "); 	// ["WIN", "2,0,0,11"]
+			tempString        = tempArray[1];			// "2,0,0,11"
+			versionArray      = tempString.split(",");	// ['2', '0', '0', '11']
+		} else {
+			versionArray      = versionStr.split(".");
+		}
+		var versionMajor      = versionArray[0];
+		var versionMinor      = versionArray[1];
+		var versionRevision   = versionArray[2];
+        	// is the major.revision >= requested major.revision AND the minor version >= requested minor
+		if (versionMajor > parseFloat(reqMajorVer)) {
+			return true;
+		} else if (versionMajor == parseFloat(reqMajorVer)) {
+			if (versionMinor > parseFloat(reqMinorVer))
+				return true;
+			else if (versionMinor == parseFloat(reqMinorVer)) {
+				if (versionRevision >= parseFloat(reqRevision))
+					return true;
+			}
+		}
+		return false;
+	}
+}
+function AC_AddExtension(src, ext)
+{
+  if (src.indexOf('?') != -1)
+    return src.replace(/\?/, ext+'?'); 
+  else
+    return src + ext;
+}
+function AC_Generateobj(objAttrs, params, embedAttrs) 
+{ 
+  var str = '';
+  if (isIE && isWin && !isOpera)
+  {
+    str += '<object ';
+    for (var i in objAttrs)
+    {
+      str += i + '="' + objAttrs[i] + '" ';
+    }
+    str += '>';
+    for (var i in params)
+    {
+      str += '<param name="' + i + '" value="' + params[i] + '" /> ';
+    }
+    str += '</object>';
+  }
+  else
+  {
+    str += '<embed ';
+    for (var i in embedAttrs)
+    {
+      str += i + '="' + embedAttrs[i] + '" ';
+    }
+    str += '> </embed>';
+  }
+  document.write(str);
+}
+function AC_FL_RunContent(){
+  var ret = 
+    AC_GetArgs
+    (  arguments, ".swf", "movie", "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+     , "application/x-shockwave-flash"
+    );
+  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs);
+}
+function AC_SW_RunContent(){
+  var ret = 
+    AC_GetArgs
+    (  arguments, ".dcr", "src", "clsid:166B1BCA-3F9C-11CF-8075-444553540000"
+     , null
+    );
+  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs);
+}
+function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
+  var ret = new Object();
+  ret.embedAttrs = new Object();
+  ret.params = new Object();
+  ret.objAttrs = new Object();
+  for (var i=0; i < args.length; i=i+2){
+    var currArg = args[i].toLowerCase();    
+    switch (currArg){	
+      case "classid":
+        break;
+      case "pluginspage":
+        ret.embedAttrs[args[i]] = args[i+1];
+        break;
+      case "src":
+      case "movie":	
+        args[i+1] = AC_AddExtension(args[i+1], ext);
+        ret.embedAttrs["src"] = args[i+1];
+        ret.params[srcParamName] = args[i+1];
+        break;
+      case "onafterupdate":
+      case "onbeforeupdate":
+      case "onblur":
+      case "oncellchange":
+      case "onclick":
+      case "ondblclick":
+      case "ondrag":
+      case "ondragend":
+      case "ondragenter":
+      case "ondragleave":
+      case "ondragover":
+      case "ondrop":
+      case "onfinish":
+      case "onfocus":
+      case "onhelp":
+      case "onmousedown":
+      case "onmouseup":
+      case "onmouseover":
+      case "onmousemove":
+      case "onmouseout":
+      case "onkeypress":
+      case "onkeydown":
+      case "onkeyup":
+      case "onload":
+      case "onlosecapture":
+      case "onpropertychange":
+      case "onreadystatechange":
+      case "onrowsdelete":
+      case "onrowenter":
+      case "onrowexit":
+      case "onrowsinserted":
+      case "onstart":
+      case "onscroll":
+      case "onbeforeeditfocus":
+      case "onactivate":
+      case "onbeforedeactivate":
+      case "ondeactivate":
+      case "type":
+      case "codebase":
+      case "id":
+        ret.objAttrs[args[i]] = args[i+1];
+        break;
+      case "width":
+      case "height":
+      case "align":
+      case "vspace": 
+      case "hspace":
+      case "class":
+      case "title":
+      case "accesskey":
+      case "name":
+      case "tabindex":
+        ret.embedAttrs[args[i]] = ret.objAttrs[args[i]] = args[i+1];
+        break;
+      default:
+        ret.embedAttrs[args[i]] = ret.params[args[i]] = args[i+1];
+    }
+  }
+  ret.objAttrs["classid"] = classid;
+  if (mimeType) ret.embedAttrs["type"] = mimeType;
+  return ret;
+}
+// -->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+// -----------------------------------------------------------------------------
+// Globals
+// Major version of Flash required
+var requiredMajorVersion = 10;
+// Minor version of Flash required
+var requiredMinorVersion = 0;
+// Revision of Flash required
+var requiredRevision = 2;
+// -----------------------------------------------------------------------------
+// -->
+</script>
+<style type="text/css">
+<!--
+.empase {
+	color: #F30;
+}
+.emaspse2 {
+	font-weight: bold;
+	color: #06F;
+}
+-->
+</style></head>
+
+
+
+
+<body bgcolor="#ffffff">
+  <div id="listasites">
+  <div id="tudobox" style=" border:1px solid #CCC">
+  <div id="flashbox">
+  <!--url's used in the movie-->
+  <!--text used in the movie-->
+  <!--
+<p align="left"><font face="Arial" size="15" color="#ff0000" letterSpacing="0.000000" kerning="1">Loading...</font></p>
+-->
+  <script language="JavaScript" type="text/javascript">
+<!--
+var hasRightVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+if(hasRightVersion) {  // if we've detected an acceptable version
+	// embed the flash movie
+	AC_FL_RunContent(
+		'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,2,0',
+		'width', '500',
+		'height', '520',
+		'src', 'javascript/embed_tool',
+		'quality', 'best',
+		'pluginspage', 'http://www.adobe.com/go/getflashplayer',
+		'align', 'middle',
+		'play', 'true',
+		'loop', 'true',
+		'scale', 'showall',
+		'wmode', 'window',
+		'devicefont', 'false',
+		'id', 'ExternalInterfaceExample',
+		'bgcolor', '#ffffff',
+		'name', 'ExternalInterfaceExample',
+		'menu', 'false',
+		'allowFullScreen', 'false',
+		'allowScriptAccess','sameDomain',
+		'movie', 'javascript/embed_tool',
+		'salign', ''
+		); //end AC code
+} else {  // flash is too old or we can't detect the plugin
+	var alternateContent = '<a href="http://www.adobe.com/go/getflashplayer/"><img src="images/noflash.png"></a>';
+	document.write(alternateContent);  // insert non-flash content
+}
+// -->
+</script><embed width="500" height="520" src="javascript/embed_tool.swf" quality="best" pluginspage="http://www.adobe.com/go/getflashplayer" align="middle" play="true" loop="true" scale="showall" wmode="window" devicefont="false" bgcolor="#ffffff" name="ExternalInterfaceExample" menu="false" allowfullscreen="false" allowscriptaccess="sameDomain" salign="" type="application/x-shockwave-flash"> 
+    
+  <noscript>
+  &lt;img src="images/nojavascript.png"&gt;
+  </noscript>
+    
+    
+    
+  </div>
+  <div id="navegacao5">
+    Seelcione uma categoria:
+    <select id="categorias" onchange="LoadPage('/conteudoembed.php?catid=','conteudo_mostrar',document.getElementById('categorias').value);location.hash='#modelos1';" name="categorias">
+  <option id="" value="" selected="">Ãšltimas 30 Adicionadas</option>
+    <option id="29" value="29">Abstrato (4)</option>
+      
+        <option id="41" value="41">Amizade (2)</option>
+      
+        <option id="19" value="19">Amor (100)</option>
+      
+        <option id="8" value="8">Aniversário (7)</option>
+      
+        <option id="20" value="20">Ano Novo (22)</option>
+      
+        <option id="22" value="22">Bíblicas (13)</option>
+      
+        <option id="32" value="32">Boa Tarde (1)</option>
+      
+        <option id="24" value="24">Bom Dia (9)</option>
+      
+        <option id="7" value="7">Bordas (115)</option>
+      
+        <option id="30" value="30">Calendários (9)</option>
+      
+        <option id="18" value="18">Cartões (2)</option>
+      
+        <option id="42" value="42">Casamento (3)</option>
+      
+        <option id="34" value="34">Dia da Mulher (3)</option>
+      
+        <option id="40" value="40">Dia das Crianças (5)</option>
+      
+        <option id="36" value="36">Dia das Mães (16)</option>
+      
+        <option id="38" value="38">Dia dos namorados (5)</option>
+      
+        <option id="39" value="39">Dia dos Pais (4)</option>
+      
+        <option id="43" value="43">Diversas (3)</option>
+      
+        <option id="28" value="28">Faces (7)</option>
+      
+        <option id="27" value="27">Filmes (18)</option>
+      
+        <option id="33" value="33">Fim de Semana (2)</option>
+      
+        <option id="23" value="23">Flores (72)</option>
+      
+        <option id="25" value="25">Infantil (101)</option>
+      
+        <option id="17" value="17">Internet (1)</option>
+      
+        <option id="6" value="6">Natalinas (24)</option>
+      
+        <option id="44" value="44">Noivas (1)</option>
+      
+        <option id="11" value="11">Outdoors (12)</option>
+      
+        <option id="21" value="21">Paisagens (10)</option>
+      
+        <option id="35" value="35">Páscoa (16)</option>
+      
+        <option id="26" value="26">Pessoas Famosas (8)</option>
+      
+        <option id="15" value="15">Polaroides (32)</option>
+      
+        <option id="14" value="14">Quadros de Parede (2)</option>
+      
+        <option id="37" value="37">Religiosas (1)</option>
+      
+        <option id="16" value="16">Selos (6)</option>
+      
+        <option id="13" value="13">Telas ( TV, PC, etc ) (13)</option>
+      
+        <option id="31" value="31">Times de Futebol (25)</option>
+      
+            
+      
+      </select><br>
+    Clique em uma moldura abaixo:
+    <div style="height:420px;width:215px; overflow: auto; border:1px solid #666;">
+  <div id="waiter_frame_list" style="display: none;"><img src="molduras_files/loading_002.gif" alt="waiter" id="waiter_frame_list_img"></div>
+      <div id="frame-table">
+        <div id="conteudo_mostrar">
+          
+          <style type="text/css">
+lista_conteudo a{
+	color:#3366CC;
+	text-decoration: none;
+	font-weight:bold;
+}
+.lista_conteudo a:hover{
+	color:#000;
+}
+.lista_conteudo{
+	margin:3px 3px 3px 3px;
+	display:block;
+	float:left;
+	color:#393733;
+    padding-right:4px;
+	width:100px;
+	background-color:#fff;
+	min-height:67px;
+	font-size: 13px;
+	color:#666;
+}
+
+</style>
+<div id="conteudo_mostrar">
+
+
+<p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><p>
+</p><table width="4%" border="0" cellpadding="1" cellspacing="2">
+<tbody><tr bgcolor="#eeeeee">
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/ 2011042201144922042011.jpg" name="816" width="90" height="68" border="0" onclick="sendToActionScript('IDIwMTEwNDIyMDExNDQ5MjIwNDIwMTEucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/ 2011042201135922042011.jpg" name="815" width="90" height="68" border="0" onclick="sendToActionScript('IDIwMTEwNDIyMDExMzU5MjIwNDIwMTEucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/ 2011042201132422042011.jpg" name="814" width="90" height="68" border="0" onclick="sendToActionScript('IDIwMTEwNDIyMDExMzI0MjIwNDIwMTEucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/ 2011042201125822042011.jpg" name="813" width="90" height="68" border="0" onclick="sendToActionScript('IDIwMTEwNDIyMDExMjU4MjIwNDIwMTEucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/ 2011042201114322042011.jpg" name="812" width="90" height="68" border="0" onclick="sendToActionScript('IDIwMTEwNDIyMDExMTQzMjIwNDIwMTEucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/ 2011042201101922042011.jpg" name="811" width="90" height="68" border="0" onclick="sendToActionScript('IDIwMTEwNDIyMDExMDE5MjIwNDIwMTEucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/ 2011042201082422042011.jpg" name="810" width="90" height="68" border="0" onclick="sendToActionScript('IDIwMTEwNDIyMDEwODI0MjIwNDIwMTEucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110301112149.jpg" name="809" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAzMDExMTIxNDkucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110301111655.jpg" name="808" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAzMDExMTE2NTUucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110301111640.jpg" name="807" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAzMDExMTE2NDAucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110301111617.jpg" name="806" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAzMDExMTE2MTcucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110301111523.jpg" name="805" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAzMDExMTE1MjMucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110223125119.jpg" name="804" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAyMjMxMjUxMTkucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110223125056.jpg" name="803" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAyMjMxMjUwNTYucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110223125042.jpg" name="802" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAyMjMxMjUwNDIucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110223125017.jpg" name="801" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAyMjMxMjUwMTcucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110223125000.jpg" name="800" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAyMjMxMjUwMDAucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110107223110.jpg" name="799" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDcyMjMxMTAucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110107102222.jpg" name="798" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDcxMDIyMjIucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110105201236.jpg" name="797" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDUyMDEyMzYucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110105201205.jpg" name="796" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDUyMDEyMDUucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110105201142.jpg" name="795" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDUyMDExNDIucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110105201056.jpg" name="794" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDUyMDEwNTYucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110105201037.jpg" name="793" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDUyMDEwMzcucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110105151247.jpg" name="792" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDUxNTEyNDcucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110105121001.jpg" name="791" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDUxMjEwMDEucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110104200510.jpg" name="790" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDQyMDA1MTAucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110104104123.jpg" name="789" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDQxMDQxMjMucG5n');"></div></td>
+</tr><tr bgcolor="#eeeeee"><td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110104100828.jpg" name="788" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDQxMDA4MjgucG5n');"></div></td>
+<td><div style="border:1px solid  #999;CURSOR:pointer;"><img src="/molduras_img/20110104094110.jpg" name="787" width="90" height="68" border="0" onclick="sendToActionScript('MjAxMTAxMDQwOTQxMTAucG5n');"></div></td>
+</tr></tbody></table>
+
+</div><br>
+  </div>
+        
+        </div>
+      </div>
+    <a href="http://www.scrapee.net?sms_ss=embed" target="_blank"><img src="icones/mais.png" width="217" height="43" border="0"></a></div>
+</div></div>
+
+
+
+Icones: 
+<select id="categorias_icones" onchange="LoadPage('/icones.php?catid=','conteudo_icons',document.getElementById('categorias_icones').value);location.hash='#icons';" name="categorias_icones" style=" border:1px solid; margin-top:5px;">
+<option id="" value="" selected="">Categorias</option>
+<option id="24" value="24">Amor</option>
+
+				<option id="25" value="25">Animais</option>
+
+				<option id="26" value="26">Aniversario</option>
+
+				<option id="43" value="43">Aparencia</option>
+
+				<option id="46" value="46">Boa Noite</option>
+
+				<option id="45" value="45">Boa Tarde</option>
+
+				<option id="44" value="44">Bom Dia</option>
+
+				<option id="42" value="42">Chapeus</option>
+
+				<option id="27" value="27">Comida</option>
+
+				<option id="33" value="33">Diversos</option>
+
+				<option id="29" value="29">Emoticons</option>
+
+				<option id="30" value="30">Esporte</option>
+
+				<option id="31" value="31">Flores</option>
+
+				<option id="32" value="32">Informatica</option>
+
+				<option id="34" value="34">Lugares</option>
+
+				<option id="47" value="47">Memes</option>
+
+				<option id="36" value="36">Objetos</option>
+
+				<option id="37" value="37">Personagens</option>
+
+				<option id="38" value="38">Planetas</option>
+
+				<option id="40" value="40">Terror</option>
+
+								
+
+</select>
+- Para adicionar um ícone a sua foto, clique sobre ele. Você pode adicionar quantos quiser.<a name="icons" id="icons"></a>
+<div id="conteudo_icons" style=" width:728px;background-color:#fff">
+				<div id="listasites_montages" style="overflow: auto; width:728px; height:105px">
+
+<table width="728" border="0" cellpadding="0" cellspacing="4">
+  <tbody><tr>
+  
+      <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918391.png');location.hash='#loader';" src="/iconesthumbs/201006131918391.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918411_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131918411_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918432.png');location.hash='#loader';" src="/iconesthumbs/201006131918432.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918452_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131918452_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918473.png');location.hash='#loader';" src="/iconesthumbs/201006131918473.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918523_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131918523_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918554.png');location.hash='#loader';" src="/iconesthumbs/201006131918554.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918574_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131918574_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131918595.png');location.hash='#loader';" src="/iconesthumbs/201006131918595.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131919015_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131919015_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131919036_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131919036_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131919057_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131919057_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131919088_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131919088_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201006131919109_256x256.png');location.hash='#loader';" src="/iconesthumbs/201006131919109_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/2010061319191210_256x256.png');location.hash='#loader';" src="/iconesthumbs/2010061319191210_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/2010061319191411_256x256.png');location.hash='#loader';" src="/iconesthumbs/2010061319191411_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/2010061319191612_256x256.png');location.hash='#loader';" src="/iconesthumbs/2010061319191612_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/2010061319191813_256x256.png');location.hash='#loader';" src="/iconesthumbs/2010061319191813_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/2010061319192014_256x256.png');location.hash='#loader';" src="/iconesthumbs/2010061319192014_256x256.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100613191922amor.png');location.hash='#loader';" src="/iconesthumbs/20100613191922amor.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100613191924heart_by_Artdesigner.lv.png');location.hash='#loader';" src="/iconesthumbs/20100613191924heart_by_Artdesigner.lv.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100613191926Love.png');location.hash='#loader';" src="/iconesthumbs/20100613191926Love.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100613193641Glasses.png');location.hash='#loader';" src="/iconesthumbs/20100613193641Glasses.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100613193716xeyes.png');location.hash='#loader';" src="/iconesthumbs/20100613193716xeyes.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/201009011541341.png');location.hash='#loader';" src="/iconesthumbs/201009011541341.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100901154147finder_heart.png');location.hash='#loader';" src="/iconesthumbs/20100901154147finder_heart.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100901154153gold_button_heart.png');location.hash='#loader';" src="/iconesthumbs/20100901154153gold_button_heart.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100901154201kiss_me.png');location.hash='#loader';" src="/iconesthumbs/20100901154201kiss_me.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100901154218red_heart.png');location.hash='#loader';" src="/iconesthumbs/20100901154218red_heart.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100901154522heart_arrow.png');location.hash='#loader';" src="/iconesthumbs/20100901154522heart_arrow.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100901154529heart_bandaged.png');location.hash='#loader';" src="/iconesthumbs/20100901154529heart_bandaged.png"></td>
+    <td><img style=" border:1px solid;cursor:pointer" onclick="sendIcon('/iconesframes/20100901154534heart_broken.png');location.hash='#loader';" src="/iconesthumbs/20100901154534heart_broken.png"></td>
+
+
+  </tr>
+</tbody></table>
+
+
+</div></div>
+
+
+</body></html>
