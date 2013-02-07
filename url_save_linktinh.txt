@@ -16,3 +16,6 @@ http://www.flashxml.net/how-to-publish-the-same-product-on-multiple-pages.html
 
 
 http://jeez.eu/2009/09/27/excellent-and-free-image-editor-scripts-for-your-sites.html
+
+
+https://developers.google.com/youtube/player_parameters
